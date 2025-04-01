@@ -1,4 +1,4 @@
-# Team TeamName 2025 Wiki
+# Team ZJU-China 2025 Wiki
 
 This repository uses `TypeScript` and `React` to manage the wikis.
 
@@ -19,8 +19,8 @@ for web development.
 
 1. Clone the repository:
    ```bash
-   git clone https://gitlab.igem.org/templates/wiki-react-vite
-   cd wiki-react-vite
+   git clone https://gitlab.igem.org/2025/zju-china
+   cd zju-china
    ```
 2. Install the dependencies:
 
