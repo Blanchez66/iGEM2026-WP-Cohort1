@@ -1,10 +1,5 @@
-import { stringToSlug } from "../utils";
 
 export function Footer() {
-  const teamYear = import.meta.env.VITE_TEAM_YEAR;
-  const teamName = import.meta.env.VITE_TEAM_NAME;
-  const teamSlug = stringToSlug(teamName);
-
   return (
     <footer className="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
       <div className="container">
@@ -52,7 +47,7 @@ export function Footer() {
           <div className="col">
             <p className="mb-0">
               <small>
-                © 2025 - Content on this site is licensed under a{" "}
+                © 2026 - Content on this site is licensed under a{" "}
                 <a
                   className="subfoot"
                   href="https://creativecommons.org/licenses/by/4.0/"
@@ -66,8 +61,8 @@ export function Footer() {
             <p>
               <small>
                 The repository used to create this website is available at{" "}
-                <a href={`https://gitlab.igem.org/${teamYear}/${teamSlug}`}>
-                  gitlab.igem.org/{teamYear}/{teamSlug}
+                <a href={`https://github.com/AnyaReese/iGEM26-WP-Tutorial-React`}>
+                  github.com/AnyaReese/iGEM26-WP-Tutorial-React
                 </a>
                 .
               </small>

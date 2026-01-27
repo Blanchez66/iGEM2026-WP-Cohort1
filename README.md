@@ -1,11 +1,15 @@
-# Team ZJU-China 2025 Wiki
+# Team ZJU-China 2026 WP Wiki
 
 This repository uses `TypeScript` and `React` to manage the wikis.
 
 This repository **MUST** contain all coding assets to generate your team's wiki
 (HTML, CSS, JavaScript, TypeScript, Python, etc).
 
-Images, photos, icons and fonts **MUST** be stored on `static.igem.wiki` using
+Please be aware that all changes should be submitted before the deadline.
+
+Please fork this repository and deliver a complete wiki. The final evaluation will be based on the latest deployment submitted before **February 12, 24:00 (CST) (UTC+8)**. This will directly affect the team's deliverables.
+
+Images, photos, icons, videos and fonts can be stored in the repository or an external link, as this is a trial project. However, in the formal competition, images, photos, icons and fonts **MUST** be stored on `static.igem.wiki` using
 [tools.igem.org](https://tools.igem.org), and Videos **must** be embedded
 from [iGEM Video Universe](https://video.igem.org).
 
@@ -19,8 +23,8 @@ for web development.
 
 1. Clone the repository:
    ```bash
-   git clone https://gitlab.igem.org/2025/zju-china
-   cd zju-china
+   git clone https://github.com/AnyaReese/iGEM26-WP-Tutorial-React.git
+   cd iGEM26-WP-Tutorial-React
    ```
 2. Install the dependencies:
 
@@ -54,6 +58,8 @@ Below is the structure of important files and directories in this project:
     ├── README.md            -> The file you are currently reading
     ├── index.html           -> Single HTML file for the wiki
     ├── package.json         -> Manages project metadata and dependencies
+    ├── public/
+    │   └── images/          -> Store static images and assets here
     ├── src/
     │   ├── components/      -> Pre-built components(like Navbar, Footer, etc.)
     │   ├── containers/

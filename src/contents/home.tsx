@@ -74,6 +74,24 @@ export function Home() {
       </div>
       <div className="row mt-4">
         <div className="col">
+          <h2>Test Image Deployment</h2>
+          <hr />
+          <p>This is a test to verify that static assets are correctly deployed and accessible.</p>
+          <div className="text-center">
+            <img 
+              src={`${import.meta.env.BASE_URL}images/anyareese.jpg`} 
+              alt="Test Deployment" 
+              className="img-fluid rounded shadow"
+              style={{ maxHeight: '500px' }}
+            />
+            <p className="text-muted mt-2">
+              Image source: <code>{import.meta.env.BASE_URL}images/anyareese.jpg</code>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="row mt-4">
+        <div className="col">
           <h2>Building Your Wiki</h2>
           <hr />
           <ul>
