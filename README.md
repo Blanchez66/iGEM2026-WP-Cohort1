@@ -7,7 +7,7 @@ This repository **MUST** contain all coding assets to generate your team's wiki
 
 Please be aware that all changes should be submitted before the deadline.
 
-Please fork this repository and deliver a complete wiki. The final evaluation will be based on the latest deployment submitted before **February 12, 24:00 (CST) (UTC+8)**. This will directly affect the team's deliverables.
+Please fork this repository and deliver a complete wiki. The final evaluation will be based on the latest deployment submitted before **February 22, 24:00 (CST) (UTC+8)**. This will directly affect the team's deliverables.
 
 Images, photos, icons, videos and fonts can be stored in the repository or an external link, as this is a trial project. However, in the formal competition, images, photos, icons and fonts **MUST** be stored on `static.igem.wiki` using
 [tools.igem.org](https://tools.igem.org), and Videos **must** be embedded
