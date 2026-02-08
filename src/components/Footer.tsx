@@ -61,8 +61,9 @@ export function Footer() {
             <p>
               <small>
                 The repository used to create this website is available at{" "}
-                <a href={`https://github.com/AnyaReese/iGEM26-WP-Tutorial-React`}>
-                  github.com/AnyaReese/iGEM26-WP-Tutorial-React
+                {/* <a href={`https://github.com/AnyaReese/iGEM26-WP-Tutorial-React`}> */}
+                <a href={`https://github.com/Blanchez66/iGEM2026-WP-Cohort1`}>
+                  github.com/Blanchez66/iGEM2026-WP-Cohort1
                 </a>
                 .
               </small>
