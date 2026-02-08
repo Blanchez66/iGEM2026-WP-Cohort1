@@ -4,6 +4,7 @@ export * from "./members.tsx";
 export * from "./attributions.tsx";
 // Project
 export * from "./description.tsx";
+export * from "./design.tsx";
 export * from "./engineering.tsx";
 export * from "./results.tsx";
 export * from "./contribution.tsx";

@@ -2,6 +2,7 @@ import {
   Attributions,
   Contribution,
   Description,
+  Design,
   Engineering,
   Experiments,
   Home,
@@ -73,6 +74,13 @@ const Pages: (Page | Folder)[] = [
         title: "Project Description",
         path: "/description",
         component: Description,
+        lead: "Describe how and why you chose your iGEM project.",
+      },
+      {
+        name: "Design",
+        title: "Design",
+        path: "/design",
+        component: Design,
         lead: "Describe how and why you chose your iGEM project.",
       },
       {
