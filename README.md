@@ -83,4 +83,4 @@ Below is the structure of important files and directories in this project:
 - [Bootstrap](https://getbootstrap.com): Framework for building responsive, mobile-first sites
 - [React Bootstrap](https://react-bootstrap.github.io): Bootstrap components built with React
 - [React Router](https://reactrouter.com): Declarative routing for React applications
-- (Optional) [Prettier](https://prettier.io): Code formatter
+- [Prettier](https://prettier.io): Code formatter
