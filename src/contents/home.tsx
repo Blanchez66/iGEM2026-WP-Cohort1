@@ -1,164 +1,97 @@
-import { Inspirations, InspirationLink } from "../components/Inspirations";
 
 export function Home() {
-  const links: InspirationLink[] = [
-    { year: 2024, teamName: "JU-Krakow", pageName: "" },
-    { year: 2024, teamName: "GEMS-Taiwan", pageName: "" },
-    { year: 2024, teamName: "Heidelberg", pageName: "" },
-    { year: 2024, teamName: "Marburg", pageName: "" },
-    { year: 2024, teamName: "Sydney-Australia", pageName: "" },
-    { year: 2024, teamName: "Toulouse-INSA-UPS", pageName: "" },
-    { year: 2024, teamName: "BNDS-China", pageName: "" },
-    { year: 2024, teamName: "Vilnius-Lithuania", pageName: "" },
-    { year: 2024, teamName: "BNUZH-China", pageName: "" },
-    { year: 2024, teamName: "XMU-China", pageName: "" },
-  ];
+  
 
   return (
     <>
       <div className="row">
         <div className="col">
-          <h2>Essential First Steps</h2>
-          <hr />
+          <h2>Background</h2>
           <p>
-            Familiarize yourself with the official iGEM competition rules,
-            policies, and judging criteria:
+            Carbapenem-resistant Acinetobacter baumannii (CRAB) is a typical clinically multidrug-resistant Gram-negative bacterium characterized by strong environmental adaptability, high transmission efficiency, and complex drug resistance mechanisms. Among CRAB-related deaths, the mortality rate of critically ill patients in ICUs exceeds 50%, with approximately 40,000 ICU deaths occurring worldwide each year. However, clinical treatment options for CRAB are extremely limited, with only a few agents such as polymyxins and tigecycline available. Their severe side effects and emerging drug resistance further restrict clinical application. 
+          </p> <p>
+            Targeting AbOmpA, a species-specific and highly conserved outer membrane protein, and OXA-23, the dominant carbapenemase in CRAB, our team aims to develop a precision diagnosis and treatment system for CRAB. By integrating visual detection, targeted delivery, and anti-virulence therapy, we seek to address the clinical challenges of CRAB infection and provide a novel strategy for the prevention and control of multidrug-resistant bacterial infections.
           </p>
-          <ul>
-            <li>
-              Carefully review the{" "}
-              <a
-                href="https://competition.igem.org/deliverables/team-wiki"
-                target="_blank"
-              >
-                Wiki Requirements page
-              </a>{" "}
-              to ensure your wiki meets all necessary standards for judging and
-              awards.
-            </li>
-            <li>
-              Understand the criteria and required wiki pages for Gold, Silver,
-              and Bronze Medals on the{" "}
-              <a
-                href="https://competition.igem.org/judging/medals"
-                target="_blank"
-              >
-                Medals page
-              </a>
-              .
-            </li>
-            <li>
-              Explore the various Project Prizes and their corresponding wiki
-              requirements on the{" "}
-              <a
-                href="https://competition.igem.org/judging/project-prizes"
-                target="_blank"
-              >
-                Project Prizes Page
-              </a>
-              .
-            </li>
-            <li>
-              Discover the eligibility criteria and wiki requirements for
-              Special Prizes on the{" "}
-              <a
-                href="https://competition.igem.org/judging/special-prizes"
-                target="_blank"
-              >
-                Special Prizes Page
-              </a>
-              .
-            </li>
-          </ul>
+          <table className="table table-bordered mt-3">
+            <thead className="table-light">
+              <tr>
+                <th>感染部位</th>
+                <th>占比</th>
+                <th>高危因素</th>
+                <th>临床表现</th>
+                <th>致死率</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>肺部（VAP）</td>
+                <td>30-40%</td>
+                <td>机械通气、气管插管</td>
+                <td>发热、脓痰、氧合下降</td>
+                <td>40-60%</td>
+              </tr>
+              <tr>
+                <td>血流感染（CRBSI）</td>
+                <td>25-35%</td>
+                <td>中心静脉导管、长期住院</td>
+                <td>脓毒症、感染性休克</td>
+                <td>50-70%</td>
+              </tr>
+              <tr>
+                <td>伤口/软组织</td>
+                <td>15-20%</td>
+                <td>烧伤、术后切口、压疮</td>
+                <td>创面化脓、坏死、恶臭</td>
+                <td>20-40%</td>
+              </tr>
+              <tr>
+                <td>泌尿道（CAUTI）</td>
+                <td>10-15%</td>
+                <td>留置导尿管</td>
+                <td>发热、脓尿、尿培养阳性</td>
+                <td>10-30%</td>
+              </tr>
+              <tr>
+                <td>脑膜炎</td>
+                <td>&lt;5%</td>
+                <td>神经外科手术、脑室引流</td>
+                <td>颈强直、意识障碍</td>
+                <td>70-80%</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
       <div className="row mt-4">
         <div className="col">
-          <h2>Test Image Deployment</h2>
-          <hr />
-          <p>This is a test to verify that static assets are correctly deployed and accessible.</p>
-          <div className="text-center">
-            <img 
-              src={`${import.meta.env.BASE_URL}images/anyareese.jpg`} 
-              alt="Test Deployment" 
-              className="img-fluid rounded shadow"
-              style={{ maxHeight: '500px' }}
-            />
-            <p className="text-muted mt-2">
-              Image source: <code>{import.meta.env.BASE_URL}images/anyareese.jpg</code>
-            </p>
-          </div>
+          <h2>Significance</h2>
+          <p>1</p>
+          
         </div>
       </div>
       <div className="row mt-4">
         <div className="col">
-          <h2>Building Your Wiki</h2>
-          <hr />
-          <ul>
-            <li>
-              <b>Content First, Design Second</b>: Focus on clearly documenting
-              your project, research, and activities. Design can be refined
-              later.
-            </li>
-            <li>
-              <b>Navigation is Key</b>: Structure your wiki with clear and
-              intuitive navigation. Visitors should easily find information.
-            </li>
-            <li>
-              <b>Accessibility Matters</b>: Use readable fonts, appropriate
-              color contrast, and ensure your wiki is mobile-friendly.
-            </li>
-            <li>
-              <b>Media Optimization</b>: Compress images and videos to reduce
-              file sizes and improve loading times.
-            </li>
-            <li>
-              <b>Document Early & Often</b>: Start documenting your project from
-              day one. Don't wait until the Wiki Freeze.
-            </li>
-            <li>
-              <b>Prepare for Deadlines</b>: Stay up-to-date with important
-              deadlines and events by checking the{" "}
-              <a href="https://competition.igem.org/calendar" target="_blank">
-                iGEM Competition Calendar
-              </a>
-              .
-            </li>
-          </ul>
+          <h2>Our Solution</h2>
+          <p>
+            1
+          </p>
+        </div>
+      </div>
+      <div className="row mt-4">
+        <div className="col">
+          <h2>Learn More Details</h2>
+          <p>
+            1
+          </p>
         </div>
       </div>
       <div className="row mt-4">
         <div className="col-lg-8">
-          <h2>Tips for Success</h2>
-          <hr />
-          <ul>
-            <li>
-              <b>Clearly Define Your Project</b>: Explain your project's goals,
-              methodology, and expected outcomes in a clear and concise manner.
-            </li>
-            <li>
-              <b>Show Your Progress</b>: Regularly update your wiki with your
-              team's progress, experiments, and results.
-            </li>
-            <li>
-              <b>Engage Your Audience</b>: Consider your global audience and use
-              language that is accessible to everyone.
-            </li>
-            <li>
-              <b>Human Practices & Safety</b>: Thoroughly document your team's
-              human practices activities and safety considerations.
-            </li>
-            <li>
-              <b>Collaborate & Share</b>: Highlight collaborations with other
-              teams and institutions.
-            </li>
-            <li>
-              <b>Have Fun and Learn!</b> iGEM is a unique opportunity to learn,
-              grow, and contribute to synthetic biology.
-            </li>
-          </ul>
+          <h2>Promotion Viedo</h2>
+          <p>
+            1
+          </p>
         </div>
-        <Inspirations inspirationLinkList={links} />
       </div>
     </>
   );

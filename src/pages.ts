@@ -42,10 +42,10 @@ class Page implements Base {
 const Pages: (Page | Folder)[] = [
   {
     name: "Home",
-    title: "Home",
+    title: "How do we determine when the CRAB biofilm is disrupted?",
     path: "/",
     component: Home,
-    lead: "Your iGEM Journey Begins Here! We wish you a successful and rewarding season!",
+    lead: "How about assessing it solely with the naked eye?",
   },
   {
     name: "Team",
