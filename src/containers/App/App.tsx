@@ -1,8 +1,9 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
-import { getPathMapping, stringToSlug } from "../../utils";
+import { getPathMapping } from "../../utils";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Navbar } from "../../components/Navbar";
 import { Header } from "../../components/Header";
 import { NotFound } from "../../components/NotFound";
@@ -10,18 +11,39 @@ import { Footer } from "../../components/Footer";
 
 const App = () => {
   const pathMapping = getPathMapping();
-  const currentPath =
-    location.pathname
-      .split(`${stringToSlug(import.meta.env.VITE_TEAM_NAME)}`)
-      .pop() || "/";
+  const { pathname } = useLocation();
+  const normalizedBase = import.meta.env.BASE_URL.replace(/\/+$/, "");
+  let currentPath = pathname;
 
-  // Set Page Title
-  const title =
-    currentPath in pathMapping ? pathMapping[currentPath].title : "Not Found";
+  if (normalizedBase && currentPath.startsWith(normalizedBase)) {
+    currentPath = currentPath.slice(normalizedBase.length) || "/";
+  }
+
+  if (!currentPath.startsWith("/")) {
+    currentPath = `/${currentPath}`;
+  }
+
+  const pageName =
+    currentPath in pathMapping ? pathMapping[currentPath].name || "Home" : "Not Found";
+  const faviconHref = `${import.meta.env.BASE_URL}images/home/crab.svg?v=2`;
 
   useEffect(() => {
-    document.title = `${title || ""} | ${import.meta.env.VITE_TEAM_NAME} - iGEM ${import.meta.env.VITE_TEAM_YEAR}`;
-  }, [title]);
+    document.title = `${pageName}｜ iGEM Winter Project`;
+
+    const upsertFavicon = (rel: "icon" | "shortcut icon") => {
+      let link = document.querySelector<HTMLLinkElement>(`link[rel='${rel}']`);
+      if (!link) {
+        link = document.createElement("link");
+        link.rel = rel;
+        document.head.appendChild(link);
+      }
+      link.type = "image/svg+xml";
+      link.href = faviconHref;
+    };
+
+    upsertFavicon("icon");
+    upsertFavicon("shortcut icon");
+  }, [pageName, faviconHref]);
 
   return (
     <>

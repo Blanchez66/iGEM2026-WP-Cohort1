@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Kalam:wght@400;700&family=Playpen+Sans+Deva:wght@400;500;600;700&display=swap");
 
 body {
   padding-top: 56px;
+  font-family: "Be Vietnam Pro", sans-serif;
 }
 
 .left-aligned {
@@ -25,6 +26,11 @@ body {
 
 .footer-custom {
   background-color: #ffd37d !important;
+}
+
+.footer-custom,
+.footer-custom * {
+  font-family: "Kalam", cursive;
 }
 
 /* CALLOUT */

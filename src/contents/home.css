@@ -1,370 +1,589 @@
 /* ========== Hero ========== */
-.home-hero {
+.hero {
+  position: relative;
   padding: 2rem 0 5rem;
   min-height: calc(100vh - 56px);
   display: flex;
   align-items: center;
 }
 
-.home-hero-inner {
+.hero-inner {
   position: relative;
 }
 
-.home-hero-logo-wrap {
-  display: inline-flex;
+.hero-logo-wrap {
+  display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.6rem;
 }
 
-.home-hero-meta {
+.hero-meta {
   display: flex;
   align-items: center;
+  width: 100%;
+  justify-content: space-between;
   gap: 0.9rem;
 }
 
-.home-hero-logo {
+.hero-logo {
   width: min(92vw, 640px);
   height: auto;
   display: block;
+  transform: translateY(-3.7rem);
 }
 
-.home-hero-star {
+.hero-star {
   width: min(20vw, 120px);
   height: auto;
   flex-shrink: 0;
-  animation: home-star-spin 12s linear infinite;
+  animation: star-spin 12s linear infinite;
 }
 
-.home-hero-subtitle {
+.hero-star:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+.hero-star:hover + .hero-subtitle {
+  transform: scale(1.1);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.hero-star:hover + .hero-subtitle .highlight-cap {
+  color: #e44510;
+}
+
+.hero-subtitle {
   margin: 0;
-  text-align: left;
-  font-size: 1rem;
+  text-align: right;
+  font-size: 1.4rem;
   color: #1a1a1a;
   max-width: 42rem;
+  font-family: "Playpen Sans Deva", sans-serif;
+  transition: all 0.3s ease; 
+  transform-origin: right center;
 }
 
-.home-hero-scroll {
-  margin-top: 1.4rem;
+.highlight-cap {
+  transition: color 0.3s ease;
+}
+
+.hero-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: -150px;
+  transform: translateX(-50%);
   text-align: center;
   cursor: pointer;
   color: #1a1a1a;
   font-size: 0.9rem;
-  animation: home-scroll-bob 1.4s ease-in-out infinite;
+  animation: scroll-bob 1.4s ease-in-out infinite;
 }
 
-.home-hero-scroll--inline {
-  align-self: center;
-}
 
-.home-hero-scroll:hover {
+.hero-scroll:hover {
   opacity: 0.8;
+  color: #e44510;
 }
 
-.home-hero-scroll-text {
+.hero-scroll-text {
   display: block;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.75rem;
+  font-family: "Playpen Sans Deva", sans-serif;
 }
 
-.home-hero-scroll-arrow {
+.hero-scroll-arrow {
   width: 1.35rem;
   height: auto;
   display: block;
   margin: 0 auto;
 }
 
-/* ========== CRAB section ========== */
-.home-crab-section {
-  padding: 3rem 0;
-  scroll-margin-top: 84px;
+
+.hero .container,
+.crab-section .container,
+.stats-section .container,
+.infection-section .container,
+.whatwedo-section .container,
+.pathway-focus-section .container,
+.special-section-v2 .container {
+  width: 92%;
+  max-width: 1160px;
 }
 
-.home-crab-heading {
+.crab-section {
+  padding: 3rem 0 1.5rem;
+  scroll-margin-top: 65px;
+}
+
+.crab-heading {
   font-size: clamp(2rem, 5vw, 3rem);
+  font-family: "Playpen Sans Deva", sans-serif;
+  font-size: 3.6rem;
   font-weight: 700;
-  color: #e07a6b;
+  color: #e44510;
   margin-bottom: 1rem;
 }
 
-.home-crab-text {
+.crab-text {
   color: #1a1a1a;
+  font-family: "Be Vietnam Pro", sans-serif !important;
+  font-size: 1.6rem;
   margin: 0;
   line-height: 1.6;
 }
 
-.home-crab-illustration {
+.crab-illustration {
   max-width: 100%;
-  width: 220px;
+  width: 360px;
   height: auto;
+  transform-origin: center center;
+  animation: sway 12s ease-in-out infinite;
 }
 
 /* ========== Stats + chart ========== */
-.home-stats-section {
-  padding: 0 0 4rem;
+.stats-section {
+  padding: 0 0 2rem;
+  font-family: "Be Vietnam Pro", sans-serif !important;
+  font-size: 1.6rem;
 }
 
-.home-stats-intro {
+.stats-intro {
   color: #1a1a1a;
   margin-bottom: 2rem;
   line-height: 1.6;
 }
 
-.home-chart {
-  max-width: 56rem;
+.chart {
+  max-width: 86rem;
   margin: 0 auto;
 }
 
-.home-chart-image {
+.chart-image {
   display: block;
-  width: 100%;
+  width: 40%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   height: auto;
 }
 
 /* ========== Infection site ========== */
-.home-infection-section {
-  padding: 1.5rem 0 4rem;
+.infection-section {
+  padding: 0.5rem 0 2rem;
+
+  /* -------- Infection fine-tuning params --------
+   * --infection-intro-to-title-gap: intro 文案到底下标题的距离
+   * --infection-title-to-figure-gap: 标题到底部图组的距离
+   * --infection-pie-left/top/width: 中心饼图位置和大小
+   * --infection-label-gap: 每个感染图标和其文字的垂直距离
+   * --infection-font-size: 感染部位文字大小
+   * --infection-*-left/right/top/width: 各感染部位块的位置和大小
+   * --infection-*-img-width: 各感染部位图片在块内占比
+   */
+  --infection-intro-to-title-gap: 6.8rem;
+  --infection-title-to-figure-gap: 1rem;
+  --infection-pie-left: 50.5%;
+  --infection-pie-top: 34%;
+  --infection-pie-width: 31.5%;
+  --infection-label-gap: 1rem;
+  --infection-font-size: clamp(1.2rem, 2.7vw, 2.5rem);
+
+  --infection-urinary-left: 3%;
+  --infection-urinary-top: 0%;
+  --infection-urinary-width: 34%;
+  --infection-urinary-img-width: 48%;
+
+  --infection-meningitis-right: 15%;
+  --infection-meningitis-top: 2%;
+  --infection-meningitis-width: 34%;
+  --infection-meningitis-img-width: 53%;
+
+  --infection-vap-right: 6%;
+  --infection-vap-top: 23%;
+  --infection-vap-width: 28%;
+  --infection-vap-img-width: 155%;
+
+  --infection-crbsi-bottom: 32%;
+  --infection-crbsi-width: 55%;
+  --infection-crbsi-img-width: 27%;
+
+  --infection-wound-left: 10%;
+  --infection-wound-top: 29%;
+  --infection-wound-width: 30%;
+  --infection-wound-img-width: 68%;
 }
 
-.home-infection-intro {
+.infection-intro {
   color: #1a1a1a;
+  font-family: "Be Vietnam Pro", sans-serif !important;
+  font-size: 1.6rem;
   line-height: 1.4;
-  font-size: clamp(1rem, 2.6vw, 1.45rem);
   max-width: 72rem;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto var(--infection-intro-to-title-gap);
 }
 
-.home-infection-title {
+.infection-title {
   text-align: center;
   color: #101010;
+  font-family: "Playpen Sans Deva", sans-serif;
   font-size: clamp(2.2rem, 6vw, 4rem);
   font-weight: 800;
-  margin: 0 0 2rem;
+  margin: 0 0 var(--infection-title-to-figure-gap);
 }
 
-.home-infection-figure {
+.infection-figure {
   position: relative;
   width: min(100%, 70rem);
   aspect-ratio: 1 / 1.03;
   margin: 0 auto;
 }
 
-.home-infection-pie {
+.infection-pie {
   position: absolute;
-  left: 50.5%;
-  top: 54%;
+  left: var(--infection-pie-left);
+  top: var(--infection-pie-top);
   transform: translate(-50%, -50%);
-  width: 31.5%;
+  width: var(--infection-pie-width);
   height: auto;
 }
 
-.home-infection-item {
+.infection-item {
+  --infection-base-transform: translateX(0);
   position: absolute;
   text-align: center;
   color: #101010;
+  opacity: 0;
 }
 
-.home-infection-item img {
+.infection-item img {
   display: block;
   margin: 0 auto;
 }
 
-.home-infection-item p {
-  margin: 0.6rem 0 0;
-  font-size: clamp(1.2rem, 2.7vw, 2.7rem);
+.infection-item p {
+  margin: var(--infection-label-gap) 0 0;
+  font-size: var(--infection-font-size);
+  font-family: "Playpen Sans Deva", sans-serif;
+
   line-height: 1.05;
 }
 
-.home-infection-item--urinary {
-  left: 1.5%;
-  top: 28%;
-  width: 34%;
+.infection-item--urinary {
+  left: var(--infection-urinary-left);
+  top: var(--infection-urinary-top);
+  width: var(--infection-urinary-width);
 }
 
-.home-infection-item--urinary img {
-  width: 58%;
+.infection-item--urinary img {
+  width: var(--infection-urinary-img-width);
+  transform: translateX(6.2rem);
+
 }
 
-.home-infection-item--urinary p {
+.infection-item--urinary p {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.infection-item--meningitis {
+  right: var(--infection-meningitis-right);
+  top: var(--infection-meningitis-top);
+  width: var(--infection-meningitis-width);
+}
+
+.infection-item--meningitis img {
+  width: var(--infection-meningitis-img-width);
+}
+
+.infection-item--meningitis p {
   text-align: left;
 }
 
-.home-infection-item--meningitis {
-  right: 2%;
-  top: 18%;
-  width: 34%;
+.infection-item--vap {
+  right: var(--infection-vap-right);
+  top: var(--infection-vap-top);
+  width: var(--infection-vap-width);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.4rem;
 }
 
-.home-infection-item--meningitis img {
-  width: 53%;
+.infection-item--vap img {
+  width: var(--infection-vap-img-width);
+  margin: 0;
 }
 
-.home-infection-item--meningitis p {
-  text-align: left;
+.infection-item--vap p {
+  order: -1;
+  margin: 0;
+  transform: translateY(6.2rem);
+  white-space: nowrap;
 }
 
-.home-infection-item--vap {
-  right: 2%;
-  top: 53%;
-  width: 28%;
-}
-
-.home-infection-item--vap img {
-  width: 58%;
-}
-
-.home-infection-item--vap p {
-  text-align: right;
-}
-
-.home-infection-item--crbsi {
+.infection-item--crbsi {
+  --infection-base-transform: translateX(-50%);
   left: 50%;
-  bottom: 1%;
-  transform: translateX(-50%);
-  width: 55%;
+  bottom: var(--infection-crbsi-bottom);
+  transform: var(--infection-base-transform);
+  width: var(--infection-crbsi-width);
 }
 
-.home-infection-item--crbsi img {
-  width: 37%;
+.infection-item--crbsi img {
+  width: var(--infection-crbsi-img-width);
 }
 
-.home-infection-item--wound {
-  left: 3.5%;
-  top: 60%;
-  width: 30%;
+.infection-item--wound {
+  left: var(--infection-wound-left);
+  top: var(--infection-wound-top);
+  width: var(--infection-wound-width);
 }
 
-.home-infection-item--wound img {
-  width: 58%;
+.infection-item--wound img {
+  width: var(--infection-wound-img-width);
 }
 
-.home-infection-item--wound p {
+.infection-item--wound p {
   text-align: left;
+  transform: translateY(-3.2rem);
+
+}
+
+.infection-section--animated .infection-pie {
+  animation: infection-pie-spin-once 2.8s ease-in-out 1 forwards;
+}
+
+.infection-section--animated .infection-item {
+  animation:
+    infection-item-fade-in 0.75s ease-out forwards,
+    infection-item-float-sway 8s ease-in-out infinite;
+}
+
+/* Order: Meningitis -> VAP -> CRBSI -> Wound -> Urinary */
+.infection-section--animated .infection-item--meningitis {
+  animation-delay: 2.9s, 3.7s;
+}
+
+.infection-section--animated .infection-item--vap {
+  animation-delay: 3.25s, 4.05s;
+}
+
+.infection-section--animated .infection-item--crbsi {
+  animation-delay: 3.6s, 4.4s;
+}
+
+.infection-section--animated .infection-item--wound {
+  animation-delay: 3.95s, 4.75s;
+}
+
+.infection-section--animated .infection-item--urinary {
+  animation-delay: 4.3s, 5.1s;
 }
 
 /* ========== What we do ========== */
-.home-whatwedo-section {
-  background: #ece7c5;
-  padding: 3.5rem 0 4rem;
+.whatwedo-section {
+  background: #fffad6;
+  padding: 2rem 0 4rem;
+
+  /* -------- WHAT WE DO fine-tuning params --------
+   * --whatwedo-diagram-top-gap: 引言到底部图组距离
+   * --whatwedo-line-*: 三条绿色线的位置和宽度
+   * --whatwedo-bubble-*-left/right/top/width: 三个 bubble 的位置和大小
+   * --whatwedo-bubble-line-height: bubble 内文字行距
+   * --whatwedo-summary-left/top/width: 底部说明文字位置和宽度
+   */
+  --whatwedo-diagram-top-gap: 3rem;
+  --whatwedo-line-left-left: 0%;
+  --whatwedo-line-left-top: 17%;
+  --whatwedo-line-left-width: 36%;
+  --whatwedo-line-right-right: 0%;
+  --whatwedo-line-right-top: 17%;
+  --whatwedo-line-right-width: 30%;
+  --whatwedo-line-middle-left: 27%;
+  --whatwedo-line-middle-top: 42%;
+  --whatwedo-line-middle-width: 43%;
+
+  --whatwedo-bubble-line-height: 1.22;
+  --whatwedo-bubble-side-top: 30%;
+  --whatwedo-bubble-side-width: 21%;
+  --whatwedo-bubble-side-ratio: 1 / 0.82;
+  --whatwedo-bubble-left-left: 0%;
+  --whatwedo-bubble-left-top: var(--whatwedo-bubble-side-top);
+  --whatwedo-bubble-left-width: var(--whatwedo-bubble-side-width);
+  --whatwedo-bubble-center-left: 41.5%;
+  --whatwedo-bubble-center-top: 6%;
+  --whatwedo-bubble-center-width: 22%;
+  --whatwedo-bubble-right-right: 1.5%;
+  --whatwedo-bubble-right-top: var(--whatwedo-bubble-side-top);
+  --whatwedo-bubble-right-width: var(--whatwedo-bubble-side-width);
+
+  --whatwedo-summary-left: 25%;
+  --whatwedo-summary-top: 66%;
+  --whatwedo-summary-width: 56%;
+  --whatwedo-summary-mobile-left: 24%;
+  --whatwedo-summary-mobile-width: 48%;
+  --whatwedo-summary-mobile-font-size: clamp(0.72rem, 2.1vw, 0.95rem);
 }
 
-.home-whatwedo-title {
+.whatwedo-title {
   margin: 0 0 1.6rem;
   font-size: clamp(2.8rem, 9vw, 5.8rem);
+  font-family: "Playpen Sans Deva", sans-serif;
   line-height: 0.95;
   color: #87531e;
   font-weight: 800;
 }
 
-.home-whatwedo-intro {
+.whatwedo-intro {
   margin: 0;
   max-width: 70rem;
   color: #121212;
-  font-size: clamp(1rem, 2.8vw, 1.2rem);
+  font-size: clamp(1rem, 2.8vw, 1.6rem);
+  font-family: "Be Vietnam Pro", sans-serif !important;
   line-height: 1.2;
 }
 
-.home-whatwedo-diagram {
+.whatwedo-diagram {
   position: relative;
-  margin: 3rem auto 0;
+  margin: var(--whatwedo-diagram-top-gap) auto 0;
   width: min(100%, 68rem);
   aspect-ratio: 1 / 0.62;
 }
 
-.home-whatwedo-line {
+.whatwedo-line {
   position: absolute;
   height: 1.15rem;
   background: #a9cf7a;
 }
 
-.home-whatwedo-line--left {
-  left: 0%;
-  top: 17%;
-  width: 36%;
+.whatwedo-line--left {
+  left: var(--whatwedo-line-left-left);
+  top: var(--whatwedo-line-left-top);
+  width: var(--whatwedo-line-left-width);
 }
 
-.home-whatwedo-line--right {
-  right: 0%;
-  top: 17%;
-  width: 30%;
+.whatwedo-line--right {
+  right: var(--whatwedo-line-right-right);
+  top: var(--whatwedo-line-right-top);
+  width: var(--whatwedo-line-right-width);
 }
 
-.home-whatwedo-line--middle {
-  left: 27%;
-  top: 42%;
-  width: 43%;
+.whatwedo-line--middle {
+  left: var(--whatwedo-line-middle-left);
+  top: var(--whatwedo-line-middle-top);
+  width: var(--whatwedo-line-middle-width);
 }
 
-.home-whatwedo-bubble {
+.whatwedo-bubble {
   position: absolute;
   border-radius: 999px;
-  background: #9fdfe9;
+  background: #bbf9ff;
   color: #0b0b0b;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  line-height: 1.05;
+  line-height: var(--whatwedo-bubble-line-height);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    filter 0.28s ease;
+  transform-origin: center center;
+  cursor: pointer;
 }
 
-.home-whatwedo-bubble--left {
-  left: 0%;
-  top: 30%;
-  width: 21%;
-  aspect-ratio: 1 / 0.8;
+.whatwedo-bubble:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  filter: drop-shadow(0 0 10px rgba(147, 238, 255, 0.95));
+}
+
+.whatwedo-bubble--left {
+  left: var(--whatwedo-bubble-left-left);
+  top: var(--whatwedo-bubble-left-top);
+  width: var(--whatwedo-bubble-left-width);
+  aspect-ratio: var(--whatwedo-bubble-side-ratio);
   font-size: clamp(0.9rem, 2.8vw, 2.2rem);
+  font-family: "Playpen Sans Deva", sans-serif;
 }
 
-.home-whatwedo-bubble--center {
-  left: 41.5%;
-  top: 6%;
-  width: 22%;
+.whatwedo-bubble--center {
+  left: var(--whatwedo-bubble-center-left);
+  top: var(--whatwedo-bubble-center-top);
+  width: var(--whatwedo-bubble-center-width);
   aspect-ratio: 1 / 0.75;
   font-size: clamp(0.9rem, 2.8vw, 2.2rem);
+  font-family: "Playpen Sans Deva", sans-serif;
 }
 
-.home-whatwedo-bubble--right {
-  right: 1.5%;
-  top: 39%;
-  width: 22%;
-  aspect-ratio: 1 / 0.85;
+.whatwedo-bubble--right {
+  right: var(--whatwedo-bubble-right-right);
+  top: var(--whatwedo-bubble-right-top);
+  width: var(--whatwedo-bubble-right-width);
+  aspect-ratio: var(--whatwedo-bubble-side-ratio);
   font-size: clamp(0.9rem, 2.8vw, 2.2rem);
+  font-family: "Playpen Sans Deva", sans-serif;
 }
 
-.home-whatwedo-summary {
+.whatwedo-summary {
   position: absolute;
-  left: 25%;
-  top: 66%;
-  width: 45%;
+  left: var(--whatwedo-summary-left);
+  top: var(--whatwedo-summary-top);
+  width: var(--whatwedo-summary-width);
   margin: 0;
   color: #101010;
   line-height: 1.07;
-  font-size: clamp(0.95rem, 2.8vw, 1.2rem);
+  font-size: clamp(0.95rem, 2.8vw, 1.6rem);
+  font-family: "Be Vietnam Pro", sans-serif !important;
 }
 
 /* ========== Pathway focus ========== */
-.home-pathway-focus-section {
+.pathway-focus-section {
   background: #ffffff;
   padding: 3.4rem 0 4.5rem;
   text-align: center;
 }
 
-.home-pathway-focus-title {
+.pathway-focus-title {
   margin: 0;
   color: #090909;
-  font-size: clamp(1.5rem, 4.8vw, 3.4rem);
+  font-family: "Playpen Sans Deva", sans-serif;
+  font-size: clamp(1.5rem, 4.8vw, 2.3rem);
   font-weight: 800;
+  transition:
+    transform 0.28s ease,
+    text-shadow 0.28s ease,
+    filter 0.28s ease;
+  transform-origin: center center;
+  cursor: pointer;
 }
 
-.home-pathway-focus-subtitle {
+.pathway-focus-subtitle {
   margin: 3.5rem 0 0;
   color: #090909;
-  font-size: clamp(1.6rem, 5vw, 3.5rem);
-  font-style: italic;
+  font-family: "Playpen Sans Deva", sans-serif;
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
   font-weight: 700;
+  transition:
+    transform 0.28s ease,
+    text-shadow 0.28s ease,
+    filter 0.28s ease;
+  transform-origin: center center;
+  cursor: pointer;
 }
 
-.home-pathway-focus-label {
+.pathway-focus-title:hover,
+.pathway-focus-subtitle:hover {
+  transform: scale(1.04);
+  text-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+.pathway-focus-label {
   margin: 5rem 0 1rem;
   text-align: left;
   color: #915f2e;
@@ -372,38 +591,38 @@
   font-style: italic;
 }
 
-.home-pathway-focus-figure {
+.pathway-focus-figure {
   position: relative;
   width: min(100%, 72rem);
   aspect-ratio: 1 / 0.67;
   margin: 0 auto;
 }
 
-.home-pathway-focus-item {
+.pathway-focus-item {
   position: absolute;
   height: auto;
 }
 
-.home-pathway-focus-item--crab-healthy {
+.pathway-focus-item--crab-healthy {
   left: 18%;
   top: 17%;
   width: 14%;
 }
 
-.home-pathway-focus-item--crab-broken {
+.pathway-focus-item--crab-broken {
   left: 17%;
   top: 56%;
   width: 15%;
 }
 
-.home-pathway-focus-ruler {
+.pathway-focus-ruler {
   position: absolute;
   left: 43.5%;
   top: 8%;
   width: 12%;
 }
 
-.home-pathway-focus-ruler-label {
+.pathway-focus-ruler-label {
   display: block;
   color: #111;
   font-style: italic;
@@ -412,116 +631,116 @@
   margin-bottom: 0.4rem;
 }
 
-.home-pathway-focus-ruler-scale {
+.pathway-focus-ruler-scale {
   width: 100%;
   display: block;
 }
 
-.home-pathway-focus-ruler-cursor {
+.pathway-focus-ruler-cursor {
   position: absolute;
   left: 12%;
   top: 44%;
   width: 76%;
 }
 
-.home-pathway-focus-item--ahl-high {
+.pathway-focus-item--ahl-high {
   left: 60%;
   top: 21%;
   width: 12%;
 }
 
-.home-pathway-focus-item--ahl-low {
+.pathway-focus-item--ahl-low {
   left: 65%;
   top: 81%;
   width: 6%;
 }
 
-.home-pathway-focus-item--bacteria-top {
+.pathway-focus-item--bacteria-top {
   right: 15%;
   top: 19%;
   width: 11%;
 }
 
-.home-pathway-focus-item--bacteria-bottom {
+.pathway-focus-item--bacteria-bottom {
   right: 15%;
   top: 63%;
   width: 10%;
 }
 
-.home-pathway-focus-item--bacteria-blue {
+.pathway-focus-item--bacteria-blue {
   right: 7%;
   top: 67%;
   width: 12%;
 }
 
-.home-pathway-focus-item--wound {
+.pathway-focus-item--wound {
   right: 0.5%;
   top: 69%;
   width: 14%;
 }
 
-.home-pathway-focus-label--second {
+.pathway-focus-label--second {
   margin-top: 2.8rem;
 }
 
-.home-pathway-focus-figure--second {
+.pathway-focus-figure--second {
   margin-top: 0.6rem;
 }
 
-.home-pathway-focus-item--flow {
+.pathway-focus-item--flow {
   left: 10%;
   top: 13%;
   width: 20%;
 }
 
-.home-pathway-focus-item--crab-healthy-2 {
+.pathway-focus-item--crab-healthy-2 {
   left: 20%;
   top: 10%;
   width: 12%;
 }
 
-.home-pathway-focus-item--crab-broken-2 {
+.pathway-focus-item--crab-broken-2 {
   left: 10%;
   top: 66%;
   width: 13%;
 }
 
-.home-pathway-focus-ruler--second {
+.pathway-focus-ruler--second {
   left: 44.5%;
   top: 7%;
 }
 
-.home-pathway-focus-item--ahl-high-2 {
+.pathway-focus-item--ahl-high-2 {
   right: 17%;
   top: 16%;
   width: 11%;
 }
 
-.home-pathway-focus-item--ahl-high-mark {
+.pathway-focus-item--ahl-high-mark {
   right: 16%;
   top: 26%;
   width: 12%;
 }
 
-.home-pathway-focus-item--bacteria-blue-2 {
+.pathway-focus-item--bacteria-blue-2 {
   right: 16%;
   top: 66%;
   width: 12%;
 }
 
-.home-pathway-focus-item--ahl-low-2 {
+.pathway-focus-item--ahl-low-2 {
   right: 27%;
   top: 77%;
   width: 6%;
 }
 
 /* ========== Why special v2 ========== */
-.home-special-section-v2 {
+.special-section-v2 {
   background: #ffffff;
   padding: 2.2rem 0 3rem;
 }
 
-.home-special-v2-title {
+.special-v2-title {
   margin: 0 0 2.8rem;
   color: #82501f;
   font-weight: 900;
@@ -529,55 +748,57 @@
   line-height: 0.95;
 }
 
-.home-special-v2-block {
+.special-v2-block {
   margin-bottom: 4.2rem;
 }
 
-.home-special-v2-head {
+.special-v2-head {
   display: flex;
   align-items: center;
   gap: 1.1rem;
 }
 
-.home-special-v2-head h3 {
+.special-v2-head h3 {
   margin: 0;
   color: #0d0d0d;
   font-size: clamp(1.6rem, 4.2vw, 3.6rem);
   font-weight: 800;
 }
 
-.home-special-v2-head--left {
+.special-v2-head--left {
   justify-content: flex-start;
 }
 
-.home-special-v2-head--right {
+.special-v2-head--right {
   justify-content: flex-end;
 }
 
-.home-special-v2-icon {
+.special-v2-icon {
   width: min(10vw, 88px);
   height: auto;
   flex-shrink: 0;
+  animation: special-icon-float-sway 8s ease-in-out infinite;
 }
 
-.home-special-v2-text {
+.special-v2-text {
   margin: 1.25rem 0 0;
   color: #101010;
+  
   font-size: clamp(1.05rem, 2.5vw, 1.3rem);
   line-height: 1.5;
   font-weight: 600;
   max-width: 62rem;
 }
 
-.home-special-v2-text--left {
+.special-v2-text--left {
   margin-right: auto;
 }
 
-.home-special-v2-text--right {
+.special-v2-text--right {
   margin-left: auto;
 }
 
-@keyframes home-star-spin {
+@keyframes star-spin {
   from {
     transform: rotate(0deg);
   }
@@ -586,7 +807,7 @@
   }
 }
 
-@keyframes home-scroll-bob {
+@keyframes scroll-bob {
   0% {
     transform: translateY(0);
   }
@@ -598,57 +819,131 @@
   }
 }
 
+@keyframes sway {
+  0% {
+    transform: rotate(-3deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes infection-pie-spin-once {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes infection-item-fade-in {
+  from {
+    opacity: 0;
+    transform: var(--infection-base-transform) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: var(--infection-base-transform) translateY(0);
+  }
+}
+
+@keyframes infection-item-float-sway {
+  0% {
+    transform: var(--infection-base-transform) translateY(0) rotate(-1.6deg);
+  }
+  25% {
+    transform: var(--infection-base-transform) translateY(-3px) rotate(1.6deg);
+  }
+  50% {
+    transform: var(--infection-base-transform) translateY(0) rotate(-1.6deg);
+  }
+  75% {
+    transform: var(--infection-base-transform) translateY(-3px) rotate(1.6deg);
+  }
+  100% {
+    transform: var(--infection-base-transform) translateY(0) rotate(-1.6deg);
+  }
+}
+
+@keyframes special-icon-float-sway {
+  0% {
+    transform: translateY(0) rotate(-1.6deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(1.6deg);
+  }
+  50% {
+    transform: translateY(0) rotate(-1.6deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(1.6deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-1.6deg);
+  }
+}
+
 @media (max-width: 768px) {
-  .home-hero {
+  .hero {
     padding-bottom: 4rem;
   }
 
-  .home-hero-meta {
+  .hero-meta {
     align-items: flex-start;
     gap: 0.6rem;
   }
 
-  .home-hero-subtitle {
+  .hero-subtitle {
     font-size: 0.9rem;
   }
 
-  .home-infection-item p {
+  .infection-item p {
     font-size: clamp(0.8rem, 2.4vw, 1.2rem);
   }
 
-  .home-whatwedo-line {
+  .whatwedo-line {
     height: 0.55rem;
   }
 
-  .home-whatwedo-summary {
-    width: 48%;
-    left: 24%;
-    font-size: clamp(0.72rem, 2.1vw, 0.95rem);
+  .whatwedo-summary {
+    width: var(--whatwedo-summary-mobile-width);
+    left: var(--whatwedo-summary-mobile-left);
+    font-size: var(--whatwedo-summary-mobile-font-size);
   }
 
-  .home-pathway-focus-subtitle {
+  .pathway-focus-subtitle {
     margin-top: 2.4rem;
   }
 
-  .home-pathway-focus-label {
+  .pathway-focus-label {
     margin-top: 3rem;
   }
 
-  .home-special-v2-block {
+  .special-v2-block {
     margin-bottom: 2.8rem;
   }
 
-  .home-special-v2-icon {
+  .special-v2-icon {
     width: min(14vw, 62px);
   }
 
-  .home-special-v2-text {
+  .special-v2-text {
     margin-top: 0.9rem;
   }
 }
 
 /* kept for compatibility in case legacy markup remains */
-.home-chart-bar {
+.chart-bar {
   width: 100%;
   min-height: 40px;
   border-radius: 6px 6px 0 0;

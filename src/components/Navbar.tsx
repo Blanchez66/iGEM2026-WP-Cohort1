@@ -48,12 +48,11 @@ export function Navbar() {
         <BootstrapNavbar.Brand as={Link} to={homePath}>
           <img
             src={logoSrc}
-            width="45px"
-            height="45px"
-            className="d-inline-block me-2"
+            width="45"
+            height="45"
+            className="d-inline-block align-top me-2"
             alt="Crab logo"
           />
-          {import.meta.env.VITE_TEAM_NAME}
         </BootstrapNavbar.Brand>
 
         <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" />
