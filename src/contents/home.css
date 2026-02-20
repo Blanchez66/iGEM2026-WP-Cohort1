@@ -1,0 +1,656 @@
+/* ========== Hero ========== */
+.home-hero {
+  padding: 2rem 0 5rem;
+  min-height: calc(100vh - 56px);
+  display: flex;
+  align-items: center;
+}
+
+.home-hero-inner {
+  position: relative;
+}
+
+.home-hero-logo-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.home-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.home-hero-logo {
+  width: min(92vw, 640px);
+  height: auto;
+  display: block;
+}
+
+.home-hero-star {
+  width: min(20vw, 120px);
+  height: auto;
+  flex-shrink: 0;
+  animation: home-star-spin 12s linear infinite;
+}
+
+.home-hero-subtitle {
+  margin: 0;
+  text-align: left;
+  font-size: 1rem;
+  color: #1a1a1a;
+  max-width: 42rem;
+}
+
+.home-hero-scroll {
+  margin-top: 1.4rem;
+  text-align: center;
+  cursor: pointer;
+  color: #1a1a1a;
+  font-size: 0.9rem;
+  animation: home-scroll-bob 1.4s ease-in-out infinite;
+}
+
+.home-hero-scroll--inline {
+  align-self: center;
+}
+
+.home-hero-scroll:hover {
+  opacity: 0.8;
+}
+
+.home-hero-scroll-text {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.home-hero-scroll-arrow {
+  width: 1.35rem;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ========== CRAB section ========== */
+.home-crab-section {
+  padding: 3rem 0;
+  scroll-margin-top: 84px;
+}
+
+.home-crab-heading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #e07a6b;
+  margin-bottom: 1rem;
+}
+
+.home-crab-text {
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.home-crab-illustration {
+  max-width: 100%;
+  width: 220px;
+  height: auto;
+}
+
+/* ========== Stats + chart ========== */
+.home-stats-section {
+  padding: 0 0 4rem;
+}
+
+.home-stats-intro {
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.home-chart {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.home-chart-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ========== Infection site ========== */
+.home-infection-section {
+  padding: 1.5rem 0 4rem;
+}
+
+.home-infection-intro {
+  color: #1a1a1a;
+  line-height: 1.4;
+  font-size: clamp(1rem, 2.6vw, 1.45rem);
+  max-width: 72rem;
+  margin: 0 auto 2.5rem;
+}
+
+.home-infection-title {
+  text-align: center;
+  color: #101010;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 800;
+  margin: 0 0 2rem;
+}
+
+.home-infection-figure {
+  position: relative;
+  width: min(100%, 70rem);
+  aspect-ratio: 1 / 1.03;
+  margin: 0 auto;
+}
+
+.home-infection-pie {
+  position: absolute;
+  left: 50.5%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+  width: 31.5%;
+  height: auto;
+}
+
+.home-infection-item {
+  position: absolute;
+  text-align: center;
+  color: #101010;
+}
+
+.home-infection-item img {
+  display: block;
+  margin: 0 auto;
+}
+
+.home-infection-item p {
+  margin: 0.6rem 0 0;
+  font-size: clamp(1.2rem, 2.7vw, 2.7rem);
+  line-height: 1.05;
+}
+
+.home-infection-item--urinary {
+  left: 1.5%;
+  top: 28%;
+  width: 34%;
+}
+
+.home-infection-item--urinary img {
+  width: 58%;
+}
+
+.home-infection-item--urinary p {
+  text-align: left;
+}
+
+.home-infection-item--meningitis {
+  right: 2%;
+  top: 18%;
+  width: 34%;
+}
+
+.home-infection-item--meningitis img {
+  width: 53%;
+}
+
+.home-infection-item--meningitis p {
+  text-align: left;
+}
+
+.home-infection-item--vap {
+  right: 2%;
+  top: 53%;
+  width: 28%;
+}
+
+.home-infection-item--vap img {
+  width: 58%;
+}
+
+.home-infection-item--vap p {
+  text-align: right;
+}
+
+.home-infection-item--crbsi {
+  left: 50%;
+  bottom: 1%;
+  transform: translateX(-50%);
+  width: 55%;
+}
+
+.home-infection-item--crbsi img {
+  width: 37%;
+}
+
+.home-infection-item--wound {
+  left: 3.5%;
+  top: 60%;
+  width: 30%;
+}
+
+.home-infection-item--wound img {
+  width: 58%;
+}
+
+.home-infection-item--wound p {
+  text-align: left;
+}
+
+/* ========== What we do ========== */
+.home-whatwedo-section {
+  background: #ece7c5;
+  padding: 3.5rem 0 4rem;
+}
+
+.home-whatwedo-title {
+  margin: 0 0 1.6rem;
+  font-size: clamp(2.8rem, 9vw, 5.8rem);
+  line-height: 0.95;
+  color: #87531e;
+  font-weight: 800;
+}
+
+.home-whatwedo-intro {
+  margin: 0;
+  max-width: 70rem;
+  color: #121212;
+  font-size: clamp(1rem, 2.8vw, 1.2rem);
+  line-height: 1.2;
+}
+
+.home-whatwedo-diagram {
+  position: relative;
+  margin: 3rem auto 0;
+  width: min(100%, 68rem);
+  aspect-ratio: 1 / 0.62;
+}
+
+.home-whatwedo-line {
+  position: absolute;
+  height: 1.15rem;
+  background: #a9cf7a;
+}
+
+.home-whatwedo-line--left {
+  left: 0%;
+  top: 17%;
+  width: 36%;
+}
+
+.home-whatwedo-line--right {
+  right: 0%;
+  top: 17%;
+  width: 30%;
+}
+
+.home-whatwedo-line--middle {
+  left: 27%;
+  top: 42%;
+  width: 43%;
+}
+
+.home-whatwedo-bubble {
+  position: absolute;
+  border-radius: 999px;
+  background: #9fdfe9;
+  color: #0b0b0b;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.05;
+}
+
+.home-whatwedo-bubble--left {
+  left: 0%;
+  top: 30%;
+  width: 21%;
+  aspect-ratio: 1 / 0.8;
+  font-size: clamp(0.9rem, 2.8vw, 2.2rem);
+}
+
+.home-whatwedo-bubble--center {
+  left: 41.5%;
+  top: 6%;
+  width: 22%;
+  aspect-ratio: 1 / 0.75;
+  font-size: clamp(0.9rem, 2.8vw, 2.2rem);
+}
+
+.home-whatwedo-bubble--right {
+  right: 1.5%;
+  top: 39%;
+  width: 22%;
+  aspect-ratio: 1 / 0.85;
+  font-size: clamp(0.9rem, 2.8vw, 2.2rem);
+}
+
+.home-whatwedo-summary {
+  position: absolute;
+  left: 25%;
+  top: 66%;
+  width: 45%;
+  margin: 0;
+  color: #101010;
+  line-height: 1.07;
+  font-size: clamp(0.95rem, 2.8vw, 1.2rem);
+}
+
+/* ========== Pathway focus ========== */
+.home-pathway-focus-section {
+  background: #ffffff;
+  padding: 3.4rem 0 4.5rem;
+  text-align: center;
+}
+
+.home-pathway-focus-title {
+  margin: 0;
+  color: #090909;
+  font-size: clamp(1.5rem, 4.8vw, 3.4rem);
+  font-weight: 800;
+}
+
+.home-pathway-focus-subtitle {
+  margin: 3.5rem 0 0;
+  color: #090909;
+  font-size: clamp(1.6rem, 5vw, 3.5rem);
+  font-style: italic;
+  font-weight: 700;
+}
+
+.home-pathway-focus-label {
+  margin: 5rem 0 1rem;
+  text-align: left;
+  color: #915f2e;
+  font-size: clamp(1.6rem, 4.4vw, 3rem);
+  font-style: italic;
+}
+
+.home-pathway-focus-figure {
+  position: relative;
+  width: min(100%, 72rem);
+  aspect-ratio: 1 / 0.67;
+  margin: 0 auto;
+}
+
+.home-pathway-focus-item {
+  position: absolute;
+  height: auto;
+}
+
+.home-pathway-focus-item--crab-healthy {
+  left: 18%;
+  top: 17%;
+  width: 14%;
+}
+
+.home-pathway-focus-item--crab-broken {
+  left: 17%;
+  top: 56%;
+  width: 15%;
+}
+
+.home-pathway-focus-ruler {
+  position: absolute;
+  left: 43.5%;
+  top: 8%;
+  width: 12%;
+}
+
+.home-pathway-focus-ruler-label {
+  display: block;
+  color: #111;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1rem, 2.2vw, 2rem);
+  margin-bottom: 0.4rem;
+}
+
+.home-pathway-focus-ruler-scale {
+  width: 100%;
+  display: block;
+}
+
+.home-pathway-focus-ruler-cursor {
+  position: absolute;
+  left: 12%;
+  top: 44%;
+  width: 76%;
+}
+
+.home-pathway-focus-item--ahl-high {
+  left: 60%;
+  top: 21%;
+  width: 12%;
+}
+
+.home-pathway-focus-item--ahl-low {
+  left: 65%;
+  top: 81%;
+  width: 6%;
+}
+
+.home-pathway-focus-item--bacteria-top {
+  right: 15%;
+  top: 19%;
+  width: 11%;
+}
+
+.home-pathway-focus-item--bacteria-bottom {
+  right: 15%;
+  top: 63%;
+  width: 10%;
+}
+
+.home-pathway-focus-item--bacteria-blue {
+  right: 7%;
+  top: 67%;
+  width: 12%;
+}
+
+.home-pathway-focus-item--wound {
+  right: 0.5%;
+  top: 69%;
+  width: 14%;
+}
+
+.home-pathway-focus-label--second {
+  margin-top: 2.8rem;
+}
+
+.home-pathway-focus-figure--second {
+  margin-top: 0.6rem;
+}
+
+.home-pathway-focus-item--flow {
+  left: 10%;
+  top: 13%;
+  width: 20%;
+}
+
+.home-pathway-focus-item--crab-healthy-2 {
+  left: 20%;
+  top: 10%;
+  width: 12%;
+}
+
+.home-pathway-focus-item--crab-broken-2 {
+  left: 10%;
+  top: 66%;
+  width: 13%;
+}
+
+.home-pathway-focus-ruler--second {
+  left: 44.5%;
+  top: 7%;
+}
+
+.home-pathway-focus-item--ahl-high-2 {
+  right: 17%;
+  top: 16%;
+  width: 11%;
+}
+
+.home-pathway-focus-item--ahl-high-mark {
+  right: 16%;
+  top: 26%;
+  width: 12%;
+}
+
+.home-pathway-focus-item--bacteria-blue-2 {
+  right: 16%;
+  top: 66%;
+  width: 12%;
+}
+
+.home-pathway-focus-item--ahl-low-2 {
+  right: 27%;
+  top: 77%;
+  width: 6%;
+}
+
+/* ========== Why special v2 ========== */
+.home-special-section-v2 {
+  background: #ffffff;
+  padding: 2.2rem 0 3rem;
+}
+
+.home-special-v2-title {
+  margin: 0 0 2.8rem;
+  color: #82501f;
+  font-weight: 900;
+  font-size: clamp(2.2rem, 8vw, 6rem);
+  line-height: 0.95;
+}
+
+.home-special-v2-block {
+  margin-bottom: 4.2rem;
+}
+
+.home-special-v2-head {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.home-special-v2-head h3 {
+  margin: 0;
+  color: #0d0d0d;
+  font-size: clamp(1.6rem, 4.2vw, 3.6rem);
+  font-weight: 800;
+}
+
+.home-special-v2-head--left {
+  justify-content: flex-start;
+}
+
+.home-special-v2-head--right {
+  justify-content: flex-end;
+}
+
+.home-special-v2-icon {
+  width: min(10vw, 88px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.home-special-v2-text {
+  margin: 1.25rem 0 0;
+  color: #101010;
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+  line-height: 1.5;
+  font-weight: 600;
+  max-width: 62rem;
+}
+
+.home-special-v2-text--left {
+  margin-right: auto;
+}
+
+.home-special-v2-text--right {
+  margin-left: auto;
+}
+
+@keyframes home-star-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes home-scroll-bob {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    padding-bottom: 4rem;
+  }
+
+  .home-hero-meta {
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .home-hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .home-infection-item p {
+    font-size: clamp(0.8rem, 2.4vw, 1.2rem);
+  }
+
+  .home-whatwedo-line {
+    height: 0.55rem;
+  }
+
+  .home-whatwedo-summary {
+    width: 48%;
+    left: 24%;
+    font-size: clamp(0.72rem, 2.1vw, 0.95rem);
+  }
+
+  .home-pathway-focus-subtitle {
+    margin-top: 2.4rem;
+  }
+
+  .home-pathway-focus-label {
+    margin-top: 3rem;
+  }
+
+  .home-special-v2-block {
+    margin-bottom: 2.8rem;
+  }
+
+  .home-special-v2-icon {
+    width: min(14vw, 62px);
+  }
+
+  .home-special-v2-text {
+    margin-top: 0.9rem;
+  }
+}
+
+/* kept for compatibility in case legacy markup remains */
+.home-chart-bar {
+  width: 100%;
+  min-height: 40px;
+  border-radius: 6px 6px 0 0;
+  transition: height 0.4s ease;
+}

@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import Pages from "../pages.ts";
 
 export function Navbar() {
+  const homePath = "/";
+  const logoSrc = `${import.meta.env.BASE_URL}images/home/crab.svg`;
+
   const pages = Pages.map((item, pageIndex) => {
     if ("folder" in item && item.folder) {
       const folderItems = item.folder.map((subpage, subpageIndex) => {
@@ -40,11 +43,19 @@ export function Navbar() {
   });
 
   return (
-    <BootstrapNavbar expand="lg" className="bg-body-tertiary" fixed="top">
+    <BootstrapNavbar expand="lg" className="navbar-custom" fixed="top">
       <Container>
-        <BootstrapNavbar.Brand>
+        <BootstrapNavbar.Brand as={Link} to={homePath}>
+          <img
+            src={logoSrc}
+            width="45px"
+            height="45px"
+            className="d-inline-block me-2"
+            alt="Crab logo"
+          />
           {import.meta.env.VITE_TEAM_NAME}
         </BootstrapNavbar.Brand>
+
         <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" />
         <BootstrapNavbar.Collapse id="basic-navbar-nav">
           <Nav className="left-aligned">{pages}</Nav>

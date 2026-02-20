@@ -1,44 +1,27 @@
-
 export function Footer() {
+  const base = import.meta.env.BASE_URL;
+
   return (
-    <footer className="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
+    <footer className="pt-5 pb-5 footer py-5 mt-5 footer-custom text-dark">
       <div className="container">
         <div className="row mb-4">
           <div className="col-lg-6 col-xs-12">
-            <h4 className="mb-3">Heading</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac
-              ante mollis quam tristique convallis
-            </p>
+            <h4 className="mb-3">Contact us</h4>
+            <p className="mb-1">2026 Zhejiang University</p>
+            <p className="mb-1">ZJU-China</p>
+            <p className="mb-0"><a href="mailto:igemzjuchina@zju.edu.cn">igemzjuchina@zju.edu.cn</a></p>
           </div>
-          <div className="col-lg-3 col-xs-12">
-            <h4 className="mt-lg-0 mt-sm-3">Links</h4>
-            <ul className="m-2 p-2">
-              <li>
-                <a href="#">Lorem ipsum</a>
-              </li>
-              <li>
-                <a href="#">Nam mauris velit</a>
-              </li>
-              <li>
-                <a href="#">Etiam vitae mauris</a>
-              </li>
-              <li>
-                <a href="#">Fusce scelerisque</a>
-              </li>
-              <li>
-                <a href="#">Sed faucibus</a>
-              </li>
-              <li>
-                <a href="#">Mauris efficitur nulla</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-lg-3 col-xs-12">
-            <h4 className="mt-lg-0 mt-sm-4 mb-3">Contact</h4>
-            <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
-            <p className="mb-0">(541) 754-3010</p>
-            <p>info@hsdf.com</p>
+          <div className="col-lg-6 col-xs-12 d-flex justify-content-lg-end justify-content-start align-items-center gap-3 mt-4 mt-lg-0">
+            <img
+              src={`${base}images/home/zjulogo.svg`}
+              alt="Zhejiang University logo"
+              className="footer-logo footer-logo--zju"
+            />
+            <img
+              src={`${base}images/home/igemlogo.svg`}
+              alt="iGEM logo"
+              className="footer-logo footer-logo--igem"
+            />
           </div>
         </div>
         <hr />

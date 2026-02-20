@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap");
+
 body {
   padding-top: 56px;
 }
@@ -6,12 +8,23 @@ body {
   margin-left: auto;
 }
 
-.bg-dark {
-  background-color: #343a40 !important;
+.navbar-custom {
+  background-color: #ffffff !important;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link,
+.navbar-custom .dropdown-toggle,
+.navbar-custom .dropdown-item {
+  font-family: "Be Vietnam Pro", sans-serif !important;
 }
 
 .bg-hero {
-  background-color: #45b06cff;
+  background-color: #ffffff;
+}
+
+.footer-custom {
+  background-color: #ffd37d !important;
 }
 
 /* CALLOUT */
@@ -54,12 +67,25 @@ body {
 
 /* footer */
 footer a {
-  color: white;
+  color: #212529;
   font-weight: bold;
   text-decoration: none;
 }
 
 footer a:hover {
-  color: white;
+  color: #212529;
   text-decoration: underline;
+}
+
+.footer-logo {
+  height: auto;
+  object-fit: contain;
+}
+
+.footer-logo--zju {
+  width: 82px;
+}
+
+.footer-logo--igem {
+  width: 74px;
 }
