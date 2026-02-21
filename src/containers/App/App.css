@@ -7,11 +7,22 @@ body {
 }
 
 h2 {
-  font-size: clamp(2rem, 5vw, 2rem) !important;
-  font-family: "Playpen Sans Deva", sans-serif !important;
-  font-weight: 700 !important;
-  color: #e44510 !important;
-  margin-bottom: 1rem !important;
+  font-size: clamp(2rem, 5vw, 2rem);
+  font-family: "Playpen Sans Deva", sans-serif;
+  font-weight: 700;
+  color: #86290c !important;
+  margin-bottom: 1rem;
+  display: inline-block;
+  background-image: linear-gradient(
+    to top,
+    transparent 36%,
+    #fcece8 36%,
+    #fcece8 66%,
+    transparent 66%
+  );
+  padding: 0 0.08em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .left-aligned {
