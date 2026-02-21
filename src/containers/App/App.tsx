@@ -54,7 +54,7 @@ const App = () => {
       {/* Header and PageContent */}
       <Routes>
         {Object.entries(pathMapping).map(
-          ([path, { title, lead, component: Component }]) => (
+          ([path, { title, component: Component }]) => (
             <Route
               key={path}
               path={path}
@@ -63,11 +63,11 @@ const App = () => {
                   <Component />
                 ) : (
                   <>
-                    <Header title={title || ""} lead={lead || ""} />
+                    <Header title={title || ""} />
                     <div className="container page-layout-container">
                       <div className="row">
                         <aside className="col-lg-3 d-none d-lg-block">
-                          <TableOfContents contentSelector="#page-content" />
+                          <TableOfContents contentSelector="#page-content" contentKey={currentPath} />
                         </aside>
                         <main id="page-content" className="col-12 col-lg-9">
                           <Component />
@@ -84,10 +84,7 @@ const App = () => {
           path="*"
           element={
             <>
-              <Header
-                title="Not Found"
-                lead="The requested URL was not found on this server."
-              />
+              <Header title="Not Found" />
               <NotFound />
             </>
           }

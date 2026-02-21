@@ -2,7 +2,16 @@
 
 body {
   padding-top: 56px;
-  font-family: "Markazi Text", serif;
+  font-family: "Be Vietnam Pro", sans-serif !important;
+
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 2rem) !important;
+  font-family: "Playpen Sans Deva", sans-serif !important;
+  font-weight: 700 !important;
+  color: #e44510 !important;
+  margin-bottom: 1rem !important;
 }
 
 .left-aligned {
@@ -81,6 +90,11 @@ body {
   margin-top: 1.25rem;
 }
 
+#page-content {
+  font-family: "Be Vietnam Pro", sans-serif !important;
+
+}
+
 #page-content h2,
 #page-content h3 {
   scroll-margin-top: 84px;
@@ -148,6 +162,15 @@ body {
 
 .bg-hero {
   background-color: #ffffff;
+}
+
+.page-header-title {
+  margin: 0 0 2.8rem;
+  color: #82501f;
+  font-weight: 900;
+  font-family: "Playpen Sans Deva", sans-serif;
+  font-size: clamp(2.2rem, 8vw, 5.5rem);
+  line-height: 0.95;
 }
 
 .footer-custom {
