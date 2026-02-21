@@ -30,7 +30,7 @@ export function Home() {
   }, [infectionAnimated]);
 
   return (
-    <>
+    <div className="home-page">
       {/* Hero */}
       <section className="hero bg-hero">
         <div className="container">
@@ -177,10 +177,7 @@ export function Home() {
         <div className="container">
           <h2 className="whatwedo-title">WHAT WE DO</h2>
           <p className="whatwedo-intro">
-            Targeting AbOmpA, a species-specific and highly conserved outer
-            membrane protein, and OXA-23, the dominant carbapenemase in CRAB,
-            our team aims to develop a precision diagnosis and treatment system
-            for CRAB.
+            Targeting 3-OH-C12-HSL, the main signaling molecule of the quorum sensing system in CRAB, and OXA-23, the dominant carbapenemáse in CRAB, our team aims to develop a precision diagnosis and treatment system for CRAB.
           </p>
 
           <div className="whatwedo-diagram">
@@ -422,6 +419,6 @@ export function Home() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

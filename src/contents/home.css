@@ -1,4 +1,22 @@
-/* ========== Hero ========== */
+.home-page {
+  --home-max-width: 1000px;
+  --home-side-pad: 24px;
+}
+
+.home-page .hero .container,
+.home-page .crab-section .container,
+.home-page .stats-section .container,
+.home-page .infection-section .container,
+.home-page .whatwedo-section .container,
+.home-page .pathway-focus-section .container,
+.home-page .special-section-v2 .container {
+  width: 100%;
+  max-width: var(--home-max-width);
+  padding-left: var(--home-side-pad);
+  padding-right: var(--home-side-pad);
+}
+
+/* Hero */
 .hero {
   position: relative;
   padding: 2rem 0 5rem;
@@ -102,18 +120,6 @@
 }
 
 
-.hero .container,
-.crab-section .container,
-.stats-section .container,
-.infection-section .container,
-.whatwedo-section .container,
-.pathway-focus-section .container,
-.special-section-v2 .container {
-  width: 92%;
-  max-width: 1160px;
-}
-
-/* Keep homepage subtitles independent from global h2 styling */
 .crab-section h2,
 .infection-section h2,
 .whatwedo-section h2,
@@ -141,24 +147,24 @@
 .crab-text {
   color: #1a1a1a;
   font-family: "Be Vietnam Pro", sans-serif !important;
-  font-size: clamp(1rem, 2.8vw, 1.6rem);
+  font-size: clamp(1rem, 2.8vw, 1.4rem);
   margin: 0;
   line-height: 1.6;
 }
 
 .crab-illustration {
   max-width: 100%;
-  width: 360px;
+  width: 300px;
   height: auto;
   transform-origin: center center;
   animation: sway 12s ease-in-out infinite;
 }
 
-/* ========== Stats + chart ========== */
+/* Stats + chart */
 .stats-section {
   padding: 0 0 2rem;
   font-family: "Be Vietnam Pro", sans-serif !important;
-  font-size: clamp(1rem, 2.8vw, 1.6rem);
+  font-size: clamp(1rem, 2.8vw, 1.4rem);
   line-height: 1.6;
 
 }
@@ -176,14 +182,14 @@
 
 .chart-image {
   display: block;
-  width: 40%;
+  width: 35%;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
   height: auto;
 }
 
-/* ========== Infection site ========== */
+/* Infection site */
 .infection-section {
   padding: 0.5rem 0 0rem;
   --infection-intro-to-title-gap: 6.8rem;
@@ -192,7 +198,7 @@
   --infection-pie-top: 34%;
   --infection-pie-width: 31.5%;
   --infection-label-gap: 1rem;
-  --infection-font-size: clamp(1.2rem, 2.7vw, 2.5rem);
+  --infection-font-size: clamp(1.2rem, 2.7vw, 2rem);
 
   --infection-urinary-left: 3%;
   --infection-urinary-top: 0%;
@@ -222,7 +228,7 @@
 .infection-intro {
   color: #1a1a1a;
   font-family: "Be Vietnam Pro", sans-serif !important;
-  font-size: clamp(1rem, 2.8vw, 1.6rem);
+  font-size: clamp(1rem, 2.8vw, 1.4rem);
   line-height: 1.6;
   max-width: 72rem;
   margin: 0 auto var(--infection-intro-to-title-gap);
@@ -386,7 +392,7 @@
   animation-delay: 4.3s, 5.1s;
 }
 
-/* ========== What we do ========== */
+/* What we do */
 .whatwedo-section {
   background: linear-gradient(
     180deg,
@@ -442,7 +448,7 @@
   max-width: 70rem;
   color: #121212;
   top: 20%;
-  font-size: clamp(1rem, 2.8vw, 1.6rem);
+  font-size: clamp(1rem, 2.8vw, 1.4rem);
   font-family: "Be Vietnam Pro", sans-serif !important;
   line-height: 1.6;
 }
@@ -540,11 +546,11 @@
   margin: 0;
   color: #101010;
   line-height: 1.6;
-  font-size: clamp(0.95rem, 2.8vw, 1.6rem);
+  font-size: clamp(0.95rem, 2.8vw, 1.4rem);
   font-family: "Be Vietnam Pro", sans-serif !important;
 }
 
-/* ========== Pathway focus ========== */
+/* Pathway focus */
 .pathway-focus-section {
   background: #ffffff;
   padding: 3.4rem 0 4.5rem;
@@ -598,7 +604,7 @@
   text-align: left;
   color: #915f2e;
   font-family: "Playpen Sans Deva", sans-serif;
-  font-size: clamp(1.6rem, 4.4vw, 3rem);
+  font-size: clamp(1.6rem, 4.4vw, 2rem);
 }
 
 .pathway-focus-figure {
@@ -640,7 +646,7 @@
   color: #111;
   font-weight: 700;
   font-family: "Playpen Sans Deva", sans-serif;
-  font-size: clamp(1rem, 2.2vw, 2rem);
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
   margin-bottom: 0.4rem;
 }
 
@@ -759,7 +765,7 @@
   width: 12%;
 }
 
-/* ========== Why special v2 ========== */
+/* Why special v2 */
 .special-section-v2 {
   background: #ffffff;
   padding: 2.2rem 0 3rem;
@@ -770,7 +776,7 @@
   color: #82501f !important;
   font-weight: 900;
   font-family: "Playpen Sans Deva", sans-serif;
-  font-size: clamp(2.2rem, 8vw, 5.5rem);
+  font-size: clamp(2.2rem, 8vw, 5rem);
   line-height: 0.95;
 }
 
@@ -788,7 +794,7 @@
   margin: 0;
   color: #0d0d0d;
   font-family: "Be Vietnam Pro", sans-serif !important;
-  font-size: clamp(1.6rem, 4.2vw, 2.6rem);
+  font-size: clamp(1.6rem, 4.2vw, 2.4rem);
   font-weight: 800;
 }
 
@@ -811,7 +817,7 @@
   margin: 1.25rem 0 0;
   color: #101010;
   font-family: "Be Vietnam Pro", sans-serif !important;
-  font-size: clamp(1.05rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.05rem, 2.5vw, 1.4rem);
   line-height: 1.5;
   max-width: 52rem;
 }
@@ -1062,7 +1068,6 @@
   }
 }
 
-/* kept for compatibility in case legacy markup remains */
 .chart-bar {
   width: 100%;
   min-height: 40px;
