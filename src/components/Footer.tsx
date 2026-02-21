@@ -4,14 +4,14 @@ export function Footer() {
   return (
     <footer className="pt-5 pb-5 footer py-5 mt-5 footer-custom text-white">
       <div className="container">
-        <div className="row mb-4">
-          <div className="col-lg-6 col-xs-12">
+        <div className="footer-top-row mb-4">
+          <div className="footer-contact">
             <h4 className="mb-3">Contact us</h4>
             <p className="mb-1">2026 Zhejiang University</p>
             <p className="mb-1">ZJU-China</p>
             <p className="mb-0"><a href="mailto:igemzjuchina@zju.edu.cn">igemzjuchina@zju.edu.cn</a></p>
           </div>
-          <div className="col-lg-6 col-xs-12 d-flex justify-content-lg-end justify-content-start align-items-center gap-3 mt-4 mt-lg-0">
+          <div className="footer-logo-row">
             <img
               src={`${base}images/home/zjulogo.svg`}
               alt="Zhejiang University logo"

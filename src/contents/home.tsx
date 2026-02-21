@@ -176,7 +176,7 @@ export function Home() {
       <section className="whatwedo-section">
         <div className="container">
           <h2 className="whatwedo-title">WHAT WE DO</h2>
-          <p className="whatwedo-intro">
+          <p className="whatwedo-text">
             Targeting 3-OH-C12-HSL, the main signaling molecule of the quorum sensing system in CRAB, and OXA-23, the dominant carbapenemáse in CRAB, our team aims to develop a precision diagnosis and treatment system for CRAB.
           </p>
 
@@ -199,7 +199,7 @@ export function Home() {
               therapy
             </div>
 
-            <p className="whatwedo-summary">
+            <p className="whatwedo-text">
               By integrating visual detection, targeted delivery, and
               anti-virulence therapy, we seek to address the clinical challenges
               of CRAB infection and provide a novel strategy for the prevention

@@ -91,8 +91,8 @@
 .hero-scroll {
   position: absolute;
   left: 50%;
-  bottom: -150px;
   transform: translateX(-50%);
+  bottom: -150px;
   text-align: center;
   cursor: pointer;
   color: #1a1a1a;
@@ -434,12 +434,9 @@
   --whatwedo-bubble-right-top: var(--whatwedo-bubble-side-top);
   --whatwedo-bubble-right-width: var(--whatwedo-bubble-side-width);
 
-  --whatwedo-summary-left: 15%;
-  --whatwedo-summary-top: 58%;
-  --whatwedo-summary-width: 76%;
-  --whatwedo-summary-mobile-left: 24%;
-  --whatwedo-summary-mobile-width: 48%;
-  --whatwedo-summary-mobile-font-size: clamp(0.72rem, 2.1vw, 1.6rem);
+  --whatwedo-summary-left: 1%;
+  --whatwedo-summary-top: 60%;
+  --whatwedo-body-font-size: clamp(1rem, 2.8vw, 1.4rem);
 }
 
 .whatwedo-title {
@@ -451,14 +448,12 @@
   font-weight: 800;
 }
 
-.whatwedo-intro {
+.whatwedo-text {
   margin: 0;
   max-width: 70rem;
   color: #121212;
-  top: 20%;
-  font-size: clamp(1rem, 2.8vw, 1.4rem);
+  font-size: var(--whatwedo-body-font-size);
   font-family: "Be Vietnam Pro", sans-serif !important;
-  line-height: 1.6;
 }
 
 .whatwedo-diagram {
@@ -522,16 +517,10 @@
   font-family: "Be Vietnam Pro", sans-serif;
 }
 
-.whatwedo-summary {
+.whatwedo-diagram > .whatwedo-text {
   position: absolute;
   left: var(--whatwedo-summary-left);
   top: var(--whatwedo-summary-top);
-  width: var(--whatwedo-summary-width);
-  margin: 0;
-  color: #101010;
-  line-height: 1.6;
-  font-size: clamp(0.95rem, 2.8vw, 1.4rem);
-  font-family: "Be Vietnam Pro", sans-serif !important;
 }
 
 /* Pathway focus */
@@ -641,9 +630,10 @@
 
 .pathway-focus-ruler-cursor {
   position: absolute;
-  left: -30%;
+  left: 50%;
   top: var(--pathway-cursor-start-top);
   width: 150%;
+  transform: translateX(-50%);
 }
 
 .pathway-focus-figure:hover .pathway-focus-ruler-cursor,
@@ -1041,7 +1031,7 @@
     height: 0.55rem;
   }
 
-  .whatwedo-summary {
+  .whatwedo-diagram > .whatwedo-text {
     width: var(--whatwedo-summary-mobile-width);
     left: var(--whatwedo-summary-mobile-left);
     font-size: var(--whatwedo-summary-mobile-font-size);
