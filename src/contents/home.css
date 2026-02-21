@@ -113,6 +113,17 @@
   max-width: 1160px;
 }
 
+/* Keep homepage subtitles independent from global h2 styling */
+.crab-section h2,
+.infection-section h2,
+.whatwedo-section h2,
+.pathway-focus-section h2,
+.special-section-v2 h2 {
+  display: block !important;
+  background-image: none !important;
+  padding: 0 !important;
+}
+
 .crab-section {
   padding: 3rem 0 1.5rem;
   scroll-margin-top: 65px;
@@ -219,7 +230,7 @@
 
 .infection-title {
   text-align: center;
-  color: #101010;
+  color: #101010 !important;
   font-family: "Playpen Sans Deva", sans-serif;
   font-size: clamp(2.2rem, 6vw, 4rem);
   font-weight: 800;
@@ -422,7 +433,7 @@
   font-size: clamp(2.8rem, 9vw, 5.8rem);
   font-family: "Playpen Sans Deva", sans-serif;
   line-height: 0.95;
-  color: #87531e;
+  color: #87531e !important;
   font-weight: 800;
 }
 
@@ -549,7 +560,7 @@
 
 .pathway-focus-title {
   margin: 0;
-  color: #090909;
+  color: #090909 !important;
   font-family: "Be Vietnam Pro", sans-serif !important;
   font-size: clamp(1.5rem, 4.8vw, 2.3rem);
   font-weight: 800;
@@ -756,7 +767,7 @@
 
 .special-v2-title {
   margin: 0 0 2.8rem;
-  color: #82501f;
+  color: #82501f !important;
   font-weight: 900;
   font-family: "Playpen Sans Deva", sans-serif;
   font-size: clamp(2.2rem, 8vw, 5.5rem);
