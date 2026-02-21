@@ -556,7 +556,7 @@
   padding: 3.4rem 0 4.5rem;
   text-align: center;
 
-  --pathway-cursor-start-top: 16%;
+  --pathway-cursor-start-top: 15%;
   --pathway-cursor-end-top: 94%;
   --pathway-cursor-duration: 2.4s;
   --pathway-cursor-delay: 0s;
