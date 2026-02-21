@@ -4,8 +4,10 @@ import BootstrapNavbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import Pages from "../pages.ts";
+import { useState } from "react";
 
 export function Navbar() {
+  const [expanded, setExpanded] = useState(false);
   const homePath = "/";
   const logoSrc = `${import.meta.env.BASE_URL}images/home/crab.svg`;
 
@@ -18,6 +20,7 @@ export function Navbar() {
               key={`subpage-${pageIndex}-${subpageIndex}`}
               as={Link}
               to={subpage.path}
+              onClick={() => setExpanded(false)}
             >
               {subpage.name}
             </NavDropdown.Item>
@@ -35,7 +38,12 @@ export function Navbar() {
       );
     } else if ("path" in item && item.path) {
       return (
-        <Nav.Link key={`page-${pageIndex}`} as={Link} to={item.path}>
+        <Nav.Link
+          key={`page-${pageIndex}`}
+          as={Link}
+          to={item.path}
+          onClick={() => setExpanded(false)}
+        >
           {item.name}
         </Nav.Link>
       );
@@ -43,9 +51,15 @@ export function Navbar() {
   });
 
   return (
-    <BootstrapNavbar expand="lg" className="navbar-custom" fixed="top">
+    <BootstrapNavbar
+      expand="lg"
+      className={`navbar-custom ${expanded ? "navbar-expanded" : ""}`}
+      fixed="top"
+      expanded={expanded}
+      onToggle={(nextExpanded) => setExpanded(nextExpanded)}
+    >
       <Container>
-        <BootstrapNavbar.Brand as={Link} to={homePath}>
+        <BootstrapNavbar.Brand as={Link} to={homePath} onClick={() => setExpanded(false)}>
           <img
             src={logoSrc}
             width="45"

@@ -184,10 +184,6 @@ export function Home() {
           </p>
 
           <div className="whatwedo-diagram">
-            <div className="whatwedo-line whatwedo-line--left" />
-            <div className="whatwedo-line whatwedo-line--right" />
-            <div className="whatwedo-line whatwedo-line--middle" />
-
             <div className="whatwedo-bubble whatwedo-bubble--left">
               visual
               <br />

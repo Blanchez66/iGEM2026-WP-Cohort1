@@ -130,7 +130,7 @@
 .crab-text {
   color: #1a1a1a;
   font-family: "Be Vietnam Pro", sans-serif !important;
-  font-size: 1.6rem;
+  font-size: clamp(1rem, 2.8vw, 1.6rem);
   margin: 0;
   line-height: 1.6;
 }
@@ -147,7 +147,7 @@
 .stats-section {
   padding: 0 0 2rem;
   font-family: "Be Vietnam Pro", sans-serif !important;
-  font-size: 1.6rem;
+  font-size: clamp(1rem, 2.8vw, 1.6rem);
   line-height: 1.6;
 
 }
@@ -211,7 +211,7 @@
 .infection-intro {
   color: #1a1a1a;
   font-family: "Be Vietnam Pro", sans-serif !important;
-  font-size: 1.6rem;
+  font-size: clamp(1rem, 2.8vw, 1.6rem);
   line-height: 1.6;
   max-width: 72rem;
   margin: 0 auto var(--infection-intro-to-title-gap);
@@ -377,7 +377,12 @@
 
 /* ========== What we do ========== */
 .whatwedo-section {
-  background: #fffad6;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #fcece8 67%,
+    #ffffff 100%
+  );
   padding: 9.2rem 2rem 2rem;
   --whatwedo-diagram-top-gap: 4rem;
   --whatwedo-line-left-left: 0%;
@@ -440,7 +445,7 @@
 
 .whatwedo-line {
   position: absolute;
-  height: 1.15rem;
+  height: 0.5rem;
   background: #a9cf7a;
 }
 
@@ -465,7 +470,7 @@
 .whatwedo-bubble {
   position: absolute;
   border-radius: 999px;
-  background: #bbf9ff;
+  background: #de5d3c;
   color: #0b0b0b;
   font-weight: 700;
   display: flex;
@@ -484,7 +489,9 @@
 .whatwedo-bubble:hover {
   transform: scale(1.08);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
-  filter: drop-shadow(0 0 10px rgba(147, 238, 255, 0.95));
+  filter: drop-shadow(0 0 10px #de5d3c);
+  color: #ffffff;
+  
 }
 
 .whatwedo-bubble--left {
@@ -531,6 +538,13 @@
   background: #ffffff;
   padding: 3.4rem 0 4.5rem;
   text-align: center;
+
+  --pathway-cursor-start-top: 16%;
+  --pathway-cursor-end-top: 94%;
+  --pathway-cursor-duration: 2.4s;
+  --pathway-cursor-delay: 0s;
+  --pathway1-crab-start-top: 12%;
+  --pathway1-crab-end-top: 60%;
 }
 
 .pathway-focus-title {
@@ -572,8 +586,7 @@
   margin: 5rem 0 1rem;
   text-align: left;
   color: #915f2e;
-  font-family: "Kalam", cursive;
-
+  font-family: "Playpen Sans Deva", sans-serif;
   font-size: clamp(1.6rem, 4.4vw, 3rem);
 }
 
@@ -591,14 +604,17 @@
 
 .pathway-focus-item--crab-healthy {
   left: 18%;
-  top: 12%;
+  top: var(--pathway1-crab-start-top);
   width: 16%;
+  z-index: 2;
 }
 
 .pathway-focus-item--crab-broken {
   left: 18%;
-  top: 60%;
+  top: var(--pathway1-crab-end-top);
   width: 16%;
+  opacity: 0;
+  z-index: 1;
 }
 
 .pathway-focus-ruler {
@@ -612,7 +628,7 @@
   display: block;
   color: #111;
   font-weight: 700;
-  font-family: "Kalam", cursive;
+  font-family: "Playpen Sans Deva", sans-serif;
   font-size: clamp(1rem, 2.2vw, 2rem);
   margin-bottom: 0.4rem;
 }
@@ -625,8 +641,34 @@
 .pathway-focus-ruler-cursor {
   position: absolute;
   left: -30%;
-  top: 44%;
+  top: var(--pathway-cursor-start-top);
   width: 150%;
+}
+
+.pathway-focus-figure:hover .pathway-focus-ruler-cursor,
+.pathway-focus-figure:focus-within .pathway-focus-ruler-cursor {
+  animation: pathway-cursor-drop var(--pathway-cursor-duration) ease-out forwards;
+  animation-delay: var(--pathway-cursor-delay);
+}
+
+.pathway-focus-figure:not(.pathway-focus-figure--second):hover .pathway-focus-item--crab-healthy,
+.pathway-focus-figure:not(.pathway-focus-figure--second):focus-within .pathway-focus-item--crab-healthy {
+  animation: pathway1-crab-drop var(--pathway-cursor-duration) ease-out forwards;
+}
+
+.pathway-focus-figure:not(.pathway-focus-figure--second):hover .pathway-focus-item--crab-broken,
+.pathway-focus-figure:not(.pathway-focus-figure--second):focus-within .pathway-focus-item--crab-broken {
+  animation: pathway1-crab-break var(--pathway-cursor-duration) ease-out forwards;
+}
+
+.pathway-focus-figure--second:hover .pathway-focus-item--crab-healthy-2,
+.pathway-focus-figure--second:focus-within .pathway-focus-item--crab-healthy-2 {
+  animation: pathway2-crab-s-curve var(--pathway-cursor-duration) ease-in-out forwards;
+}
+
+.pathway-focus-figure--second:hover .pathway-focus-item--crab-broken-2,
+.pathway-focus-figure--second:focus-within .pathway-focus-item--crab-broken-2 {
+  animation: pathway2-crab-break var(--pathway-cursor-duration) ease-in-out forwards;
 }
 
 .pathway-focus-item--ahl-high {
@@ -677,12 +719,15 @@
   left: 20%;
   top: 10%;
   width: 18%;
+  z-index: 2;
 }
 
 .pathway-focus-item--crab-broken-2 {
   left: 8%;
   top: 60%;
   width: 18%;
+  opacity: 0;
+  z-index: 1;
 }
 
 .pathway-focus-ruler--second {
@@ -713,6 +758,7 @@
   margin: 0 0 2.8rem;
   color: #82501f;
   font-weight: 900;
+  font-family: "Playpen Sans Deva", sans-serif;
   font-size: clamp(2.2rem, 8vw, 5.5rem);
   line-height: 0.95;
 }
@@ -730,6 +776,7 @@
 .special-v2-head h3 {
   margin: 0;
   color: #0d0d0d;
+  font-family: "Be Vietnam Pro", sans-serif !important;
   font-size: clamp(1.6rem, 4.2vw, 2.6rem);
   font-weight: 800;
 }
@@ -752,6 +799,7 @@
 .special-v2-text {
   margin: 1.25rem 0 0;
   color: #101010;
+  font-family: "Be Vietnam Pro", sans-serif !important;
   font-size: clamp(1.05rem, 2.5vw, 1.6rem);
   line-height: 1.5;
   max-width: 52rem;
@@ -859,6 +907,90 @@
   }
   100% {
     transform: translateY(0) rotate(-3.6deg);
+  }
+}
+
+@keyframes pathway-cursor-drop {
+  from {
+    top: var(--pathway-cursor-start-top);
+  }
+  to {
+    top: var(--pathway-cursor-end-top);
+  }
+}
+
+@keyframes pathway1-crab-drop {
+  0% {
+    top: var(--pathway1-crab-start-top);
+    opacity: 1;
+  }
+  88% {
+    top: var(--pathway1-crab-end-top);
+    opacity: 1;
+  }
+  100% {
+    top: var(--pathway1-crab-end-top);
+    opacity: 0;
+  }
+}
+
+@keyframes pathway1-crab-break {
+  0% {
+    opacity: 0;
+  }
+  88% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pathway2-crab-s-curve {
+  0% {
+    left: 20%;
+    top: 10%;
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  25% {
+    left: 14%;
+    top: 22%;
+    transform: rotate(-10deg);
+  }
+  50% {
+    left: 18%;
+    top: 38%;
+    transform: rotate(12deg);
+  }
+  75% {
+    left: 18%;
+    top: 50%;
+    transform: rotate(-8deg);
+  }
+  88% {
+    left: 8%;
+    top: 60%;
+    opacity: 1;
+    transform: rotate(-6deg);
+  }
+  100% {
+    left: 8%;
+    top: 60%;
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pathway2-crab-break {
+  0% {
+    opacity: 0;
+  }
+  88% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

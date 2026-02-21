@@ -2,7 +2,7 @@ export function Footer() {
   const base = import.meta.env.BASE_URL;
 
   return (
-    <footer className="pt-5 pb-5 footer py-5 mt-5 footer-custom text-dark">
+    <footer className="pt-5 pb-5 footer py-5 mt-5 footer-custom text-white">
       <div className="container">
         <div className="row mb-4">
           <div className="col-lg-6 col-xs-12">

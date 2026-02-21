@@ -8,6 +8,7 @@ import { Navbar } from "../../components/Navbar";
 import { Header } from "../../components/Header";
 import { NotFound } from "../../components/NotFound";
 import { Footer } from "../../components/Footer";
+import { TableOfContents } from "../../components/TableOfContents";
 
 const App = () => {
   const pathMapping = getPathMapping();
@@ -63,8 +64,15 @@ const App = () => {
                 ) : (
                   <>
                     <Header title={title || ""} lead={lead || ""} />
-                    <div className="container">
-                      <Component />
+                    <div className="container page-layout-container">
+                      <div className="row">
+                        <aside className="col-lg-3 d-none d-lg-block">
+                          <TableOfContents contentSelector="#page-content" />
+                        </aside>
+                        <main id="page-content" className="col-12 col-lg-9">
+                          <Component />
+                        </main>
+                      </div>
                     </div>
                   </>
                 )
