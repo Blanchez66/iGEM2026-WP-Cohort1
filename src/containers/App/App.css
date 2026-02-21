@@ -3,7 +3,7 @@
 body {
   padding-top: 56px;
   font-family: "Be Vietnam Pro", sans-serif !important;
-
+  overflow-x: hidden;
 }
 
 h2 {

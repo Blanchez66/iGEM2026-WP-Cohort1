@@ -1,6 +1,7 @@
 .home-page {
   --home-max-width: 1000px;
   --home-side-pad: 24px;
+  overflow-x: clip;
 }
 
 .home-page .hero .container,
@@ -265,6 +266,7 @@
   width: min(100%, 70rem);
   aspect-ratio: 1 / 1.03;
   margin: 0 auto;
+  overflow-x: clip;
 }
 
 .infection-pie {
@@ -461,6 +463,7 @@
   margin: var(--whatwedo-diagram-top-gap) auto 0;
   width: min(100%, 68rem);
   aspect-ratio: 1 / 0.62;
+  overflow-x: clip;
 }
 
 .whatwedo-bubble {
@@ -585,6 +588,7 @@
   width: min(100%, 72rem);
   aspect-ratio: 1 / 0.67;
   margin: 0 auto;
+  overflow-x: clip;
 }
 
 .pathway-focus-item {
