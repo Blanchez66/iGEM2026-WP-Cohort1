@@ -426,13 +426,13 @@
   --whatwedo-bubble-side-top: 23%;
   --whatwedo-bubble-side-width: 21%;
   --whatwedo-bubble-side-ratio: 1 / 0.82;
-  --whatwedo-bubble-left-left: 0%;
+  --whatwedo-bubble-left-left: 10%;
   --whatwedo-bubble-left-top: var(--whatwedo-bubble-side-top);
   --whatwedo-bubble-left-width: var(--whatwedo-bubble-side-width);
   --whatwedo-bubble-center-left: 39%;
   --whatwedo-bubble-center-top: -1%;
   --whatwedo-bubble-center-width: 22%;
-  --whatwedo-bubble-right-right: 0%;
+  --whatwedo-bubble-right-right: 10%;
   --whatwedo-bubble-right-top: var(--whatwedo-bubble-side-top);
   --whatwedo-bubble-right-width: var(--whatwedo-bubble-side-width);
 
