@@ -148,6 +148,8 @@
   padding: 0 0 2rem;
   font-family: "Be Vietnam Pro", sans-serif !important;
   font-size: 1.6rem;
+  line-height: 1.6;
+
 }
 
 .stats-intro {
@@ -172,17 +174,7 @@
 
 /* ========== Infection site ========== */
 .infection-section {
-  padding: 0.5rem 0 2rem;
-
-  /* -------- Infection fine-tuning params --------
-   * --infection-intro-to-title-gap: intro 文案到底下标题的距离
-   * --infection-title-to-figure-gap: 标题到底部图组的距离
-   * --infection-pie-left/top/width: 中心饼图位置和大小
-   * --infection-label-gap: 每个感染图标和其文字的垂直距离
-   * --infection-font-size: 感染部位文字大小
-   * --infection-*-left/right/top/width: 各感染部位块的位置和大小
-   * --infection-*-img-width: 各感染部位图片在块内占比
-   */
+  padding: 0.5rem 0 0rem;
   --infection-intro-to-title-gap: 6.8rem;
   --infection-title-to-figure-gap: 1rem;
   --infection-pie-left: 50.5%;
@@ -220,7 +212,7 @@
   color: #1a1a1a;
   font-family: "Be Vietnam Pro", sans-serif !important;
   font-size: 1.6rem;
-  line-height: 1.4;
+  line-height: 1.6;
   max-width: 72rem;
   margin: 0 auto var(--infection-intro-to-title-gap);
 }
@@ -386,46 +378,38 @@
 /* ========== What we do ========== */
 .whatwedo-section {
   background: #fffad6;
-  padding: 2rem 0 4rem;
-
-  /* -------- WHAT WE DO fine-tuning params --------
-   * --whatwedo-diagram-top-gap: 引言到底部图组距离
-   * --whatwedo-line-*: 三条绿色线的位置和宽度
-   * --whatwedo-bubble-*-left/right/top/width: 三个 bubble 的位置和大小
-   * --whatwedo-bubble-line-height: bubble 内文字行距
-   * --whatwedo-summary-left/top/width: 底部说明文字位置和宽度
-   */
-  --whatwedo-diagram-top-gap: 3rem;
+  padding: 9.2rem 2rem 2rem;
+  --whatwedo-diagram-top-gap: 4rem;
   --whatwedo-line-left-left: 0%;
-  --whatwedo-line-left-top: 17%;
+  --whatwedo-line-left-top: 10%;
   --whatwedo-line-left-width: 36%;
   --whatwedo-line-right-right: 0%;
-  --whatwedo-line-right-top: 17%;
-  --whatwedo-line-right-width: 30%;
-  --whatwedo-line-middle-left: 27%;
-  --whatwedo-line-middle-top: 42%;
-  --whatwedo-line-middle-width: 43%;
+  --whatwedo-line-right-top: 10%;
+  --whatwedo-line-right-width: 36%;
+  --whatwedo-line-middle-left: 25%;
+  --whatwedo-line-middle-top: 35%;
+  --whatwedo-line-middle-width: 50%;
 
   --whatwedo-bubble-line-height: 1.22;
-  --whatwedo-bubble-side-top: 30%;
+  --whatwedo-bubble-side-top: 23%;
   --whatwedo-bubble-side-width: 21%;
   --whatwedo-bubble-side-ratio: 1 / 0.82;
   --whatwedo-bubble-left-left: 0%;
   --whatwedo-bubble-left-top: var(--whatwedo-bubble-side-top);
   --whatwedo-bubble-left-width: var(--whatwedo-bubble-side-width);
-  --whatwedo-bubble-center-left: 41.5%;
-  --whatwedo-bubble-center-top: 6%;
+  --whatwedo-bubble-center-left: 39%;
+  --whatwedo-bubble-center-top: -1%;
   --whatwedo-bubble-center-width: 22%;
-  --whatwedo-bubble-right-right: 1.5%;
+  --whatwedo-bubble-right-right: 0%;
   --whatwedo-bubble-right-top: var(--whatwedo-bubble-side-top);
   --whatwedo-bubble-right-width: var(--whatwedo-bubble-side-width);
 
-  --whatwedo-summary-left: 25%;
-  --whatwedo-summary-top: 66%;
-  --whatwedo-summary-width: 56%;
+  --whatwedo-summary-left: 15%;
+  --whatwedo-summary-top: 58%;
+  --whatwedo-summary-width: 76%;
   --whatwedo-summary-mobile-left: 24%;
   --whatwedo-summary-mobile-width: 48%;
-  --whatwedo-summary-mobile-font-size: clamp(0.72rem, 2.1vw, 0.95rem);
+  --whatwedo-summary-mobile-font-size: clamp(0.72rem, 2.1vw, 1.6rem);
 }
 
 .whatwedo-title {
@@ -441,9 +425,10 @@
   margin: 0;
   max-width: 70rem;
   color: #121212;
+  top: 20%;
   font-size: clamp(1rem, 2.8vw, 1.6rem);
   font-family: "Be Vietnam Pro", sans-serif !important;
-  line-height: 1.2;
+  line-height: 1.6;
 }
 
 .whatwedo-diagram {
@@ -508,7 +493,7 @@
   width: var(--whatwedo-bubble-left-width);
   aspect-ratio: var(--whatwedo-bubble-side-ratio);
   font-size: clamp(0.9rem, 2.8vw, 2.2rem);
-  font-family: "Playpen Sans Deva", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
 }
 
 .whatwedo-bubble--center {
@@ -517,7 +502,7 @@
   width: var(--whatwedo-bubble-center-width);
   aspect-ratio: 1 / 0.75;
   font-size: clamp(0.9rem, 2.8vw, 2.2rem);
-  font-family: "Playpen Sans Deva", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
 }
 
 .whatwedo-bubble--right {
@@ -526,7 +511,7 @@
   width: var(--whatwedo-bubble-right-width);
   aspect-ratio: var(--whatwedo-bubble-side-ratio);
   font-size: clamp(0.9rem, 2.8vw, 2.2rem);
-  font-family: "Playpen Sans Deva", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
 }
 
 .whatwedo-summary {
@@ -536,7 +521,7 @@
   width: var(--whatwedo-summary-width);
   margin: 0;
   color: #101010;
-  line-height: 1.07;
+  line-height: 1.6;
   font-size: clamp(0.95rem, 2.8vw, 1.6rem);
   font-family: "Be Vietnam Pro", sans-serif !important;
 }
@@ -551,7 +536,7 @@
 .pathway-focus-title {
   margin: 0;
   color: #090909;
-  font-family: "Playpen Sans Deva", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif !important;
   font-size: clamp(1.5rem, 4.8vw, 2.3rem);
   font-weight: 800;
   transition:
@@ -565,7 +550,7 @@
 .pathway-focus-subtitle {
   margin: 3.5rem 0 0;
   color: #090909;
-  font-family: "Playpen Sans Deva", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif !important;
   font-size: clamp(1.6rem, 5vw, 2.2rem);
   font-weight: 700;
   transition:
@@ -587,8 +572,9 @@
   margin: 5rem 0 1rem;
   text-align: left;
   color: #915f2e;
+  font-family: "Kalam", cursive;
+
   font-size: clamp(1.6rem, 4.4vw, 3rem);
-  font-style: italic;
 }
 
 .pathway-focus-figure {
@@ -605,28 +591,28 @@
 
 .pathway-focus-item--crab-healthy {
   left: 18%;
-  top: 17%;
-  width: 14%;
+  top: 12%;
+  width: 16%;
 }
 
 .pathway-focus-item--crab-broken {
-  left: 17%;
-  top: 56%;
-  width: 15%;
+  left: 18%;
+  top: 60%;
+  width: 16%;
 }
 
 .pathway-focus-ruler {
   position: absolute;
   left: 43.5%;
   top: 8%;
-  width: 12%;
+  width: 6%;
 }
 
 .pathway-focus-ruler-label {
   display: block;
   color: #111;
-  font-style: italic;
   font-weight: 700;
+  font-family: "Kalam", cursive;
   font-size: clamp(1rem, 2.2vw, 2rem);
   margin-bottom: 0.4rem;
 }
@@ -638,9 +624,9 @@
 
 .pathway-focus-ruler-cursor {
   position: absolute;
-  left: 12%;
+  left: -30%;
   top: 44%;
-  width: 76%;
+  width: 150%;
 }
 
 .pathway-focus-item--ahl-high {
@@ -651,8 +637,8 @@
 
 .pathway-focus-item--ahl-low {
   left: 65%;
-  top: 81%;
-  width: 6%;
+  top: 71%;
+  width: -25%;
 }
 
 .pathway-focus-item--bacteria-top {
@@ -661,21 +647,15 @@
   width: 11%;
 }
 
-.pathway-focus-item--bacteria-bottom {
-  right: 15%;
-  top: 63%;
-  width: 10%;
-}
-
 .pathway-focus-item--bacteria-blue {
-  right: 7%;
-  top: 67%;
-  width: 12%;
+  right: 17%;
+  top: 50%;
+  width: 15%;
 }
 
 .pathway-focus-item--wound {
-  right: 0.5%;
-  top: 69%;
+  right: 10%;
+  top: 60%;
   width: 14%;
 }
 
@@ -688,21 +668,21 @@
 }
 
 .pathway-focus-item--flow {
-  left: 10%;
-  top: 13%;
-  width: 20%;
+  left: 5%;
+  top: 23%;
+  width: 29%;
 }
 
 .pathway-focus-item--crab-healthy-2 {
   left: 20%;
   top: 10%;
-  width: 12%;
+  width: 18%;
 }
 
 .pathway-focus-item--crab-broken-2 {
-  left: 10%;
-  top: 66%;
-  width: 13%;
+  left: 8%;
+  top: 60%;
+  width: 18%;
 }
 
 .pathway-focus-ruler--second {
@@ -710,28 +690,17 @@
   top: 7%;
 }
 
-.pathway-focus-item--ahl-high-2 {
-  right: 17%;
-  top: 16%;
-  width: 11%;
-}
-
 .pathway-focus-item--ahl-high-mark {
-  right: 16%;
-  top: 26%;
+  right: 25%;
+  top: 19%;
   width: 12%;
 }
 
-.pathway-focus-item--bacteria-blue-2 {
-  right: 16%;
-  top: 66%;
-  width: 12%;
-}
 
 .pathway-focus-item--ahl-low-2 {
-  right: 27%;
-  top: 77%;
-  width: 6%;
+  right: 25%;
+  top: 60%;
+  width: 12%;
 }
 
 /* ========== Why special v2 ========== */
@@ -744,7 +713,7 @@
   margin: 0 0 2.8rem;
   color: #82501f;
   font-weight: 900;
-  font-size: clamp(2.2rem, 8vw, 6rem);
+  font-size: clamp(2.2rem, 8vw, 5.5rem);
   line-height: 0.95;
 }
 
@@ -761,7 +730,7 @@
 .special-v2-head h3 {
   margin: 0;
   color: #0d0d0d;
-  font-size: clamp(1.6rem, 4.2vw, 3.6rem);
+  font-size: clamp(1.6rem, 4.2vw, 2.6rem);
   font-weight: 800;
 }
 
@@ -783,19 +752,19 @@
 .special-v2-text {
   margin: 1.25rem 0 0;
   color: #101010;
-  
-  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+  font-size: clamp(1.05rem, 2.5vw, 1.6rem);
   line-height: 1.5;
-  font-weight: 600;
-  max-width: 62rem;
+  max-width: 52rem;
 }
 
 .special-v2-text--left {
   margin-right: auto;
+  padding-left: calc(min(10vw, 88px) + 1.1rem);
 }
 
 .special-v2-text--right {
   margin-left: auto;
+  padding-right: calc(min(10vw, 88px) + 1.1rem);
 }
 
 @keyframes star-spin {
@@ -877,19 +846,19 @@
 
 @keyframes special-icon-float-sway {
   0% {
-    transform: translateY(0) rotate(-1.6deg);
+    transform: translateY(0) rotate(-3.6deg);
   }
   25% {
-    transform: translateY(-3px) rotate(1.6deg);
+    transform: translateY(-3px) rotate(3.6deg);
   }
   50% {
-    transform: translateY(0) rotate(-1.6deg);
+    transform: translateY(0) rotate(-3.6deg);
   }
   75% {
-    transform: translateY(-3px) rotate(1.6deg);
+    transform: translateY(-3px) rotate(3.6deg);
   }
   100% {
-    transform: translateY(0) rotate(-1.6deg);
+    transform: translateY(0) rotate(-3.6deg);
   }
 }
 
@@ -939,6 +908,14 @@
 
   .special-v2-text {
     margin-top: 0.9rem;
+  }
+
+  .special-v2-text--left {
+    padding-left: calc(min(14vw, 62px) + 1.1rem);
+  }
+
+  .special-v2-text--right {
+    padding-right: calc(min(14vw, 62px) + 1.1rem);
   }
 }
 

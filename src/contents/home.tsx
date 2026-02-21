@@ -226,7 +226,7 @@ export function Home() {
             How about assessing it solely with the naked eye?
           </p>
 
-          <p className="pathway-focus-label">pathway1 ： wound</p>
+          <p className="pathway-focus-label">Pathway 1: wound</p>
 
           <div className="pathway-focus-figure">
             <img
@@ -276,12 +276,6 @@ export function Home() {
               className="pathway-focus-item pathway-focus-item--bacteria-top"
             />
             <img
-              src={`${BASE}images/home/工程菌.svg`}
-              alt=""
-              aria-hidden
-              className="pathway-focus-item pathway-focus-item--bacteria-bottom"
-            />
-            <img
               src={`${BASE}images/home/分泌蓝色颗粒的工程菌.svg`}
               alt=""
               aria-hidden
@@ -296,7 +290,7 @@ export function Home() {
           </div>
 
           <p className="pathway-focus-label pathway-focus-label--second">
-            pathway2 ： VAP/ bloodstream
+            Pathway 2: VAP / bloodstream
           </p>
 
           <div className="pathway-focus-figure pathway-focus-figure--second">
@@ -335,25 +329,13 @@ export function Home() {
             </div>
 
             <img
-              src={`${BASE}images/home/高浓度AHL.svg`}
-              alt=""
-              aria-hidden
-              className="pathway-focus-item pathway-focus-item--ahl-high-2"
-            />
-            <img
               src={`${BASE}images/home/高浓度AHL里的标.svg`}
               alt=""
               aria-hidden
               className="pathway-focus-item pathway-focus-item--ahl-high-mark"
             />
             <img
-              src={`${BASE}images/home/分泌蓝色颗粒的工程菌.svg`}
-              alt=""
-              aria-hidden
-              className="pathway-focus-item pathway-focus-item--bacteria-blue-2"
-            />
-            <img
-              src={`${BASE}images/home/低浓度AHL.svg`}
+              src={`${BASE}images/home/低浓度AHL中的标.svg`}
               alt=""
               aria-hidden
               className="pathway-focus-item pathway-focus-item--ahl-low-2"
