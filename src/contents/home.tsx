@@ -82,8 +82,8 @@ export function Home() {
       {/* CRAB intro + crab illustration */}
       <section id="crab-intro" className="crab-section">
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-7">
+          <div className="crab-intro-inline">
+            <div className="crab-intro-copy">
               <h2 className="crab-heading">CRAB</h2>
               <p className="crab-text">
                 Carbapenem-resistant Acinetobacter baumannii (CRAB) is a typical
@@ -92,7 +92,7 @@ export function Home() {
                 transmission efficiency, and complex drug resistance mechanisms.
               </p>
             </div>
-            <div className="col-lg-5 text-center">
+            <div className="crab-intro-art">
               <img
                 src={`${BASE}images/home/crab.svg`}
                 alt=""

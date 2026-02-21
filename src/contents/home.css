@@ -133,6 +133,22 @@
 .crab-section {
   padding: 3rem 0 1.5rem;
   scroll-margin-top: 65px;
+  --crab-size: clamp(68px, 22vw, 300px);
+}
+
+.crab-intro-inline {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--crab-size) * 0.2);
+}
+
+.crab-intro-copy {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.crab-intro-art {
+  flex: 0 0 auto;
 }
 
 .crab-heading {
@@ -153,9 +169,10 @@
 }
 
 .crab-illustration {
-  max-width: 100%;
-  width: 300px;
+  width: var(--crab-size);
   height: auto;
+  max-width: 100%;
+  display: block;
   transform-origin: center center;
   animation: sway 12s ease-in-out infinite;
 }
