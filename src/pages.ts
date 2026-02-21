@@ -18,6 +18,8 @@ import {
   Measurement,
   Model,
   Plant,
+  Parts,
+  PartCollection,
   Software,
   Sustainability,
 } from "./contents";
@@ -169,6 +171,25 @@ const Pages: (Page | Folder)[] = [
         path: "/hardware",
         component: Hardware,
         lead: "Hardware in iGEM should make synthetic biology based on standard parts easier, faster, better, or more accessible to our community.",
+      },
+    ],
+  },
+  {
+    name: "Parts",
+    folder: [
+      {
+        name: "Parts",
+        title: "Parts",
+        path: "/parts",
+        component: Parts,
+        lead: "Document the biological parts used, designed, and characterized in your project.",
+      },
+      {
+        name: "Part Collection",
+        title: "Part Collection",
+        path: "/part-collection",
+        component: PartCollection,
+        lead: "Provide a collection of parts and references that support your project design and implementation.",
       },
     ],
   },

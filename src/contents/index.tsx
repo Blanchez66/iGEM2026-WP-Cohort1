@@ -18,6 +18,9 @@ export * from "./wetlab/safety-and-security.tsx";
 export * from "./drylab/model.tsx";
 export * from "./drylab/software.tsx";
 export * from "./drylab/hardware.tsx";
+// Parts
+export * from "./parts/parts.tsx";
+export * from "./parts/part-collection.tsx";
 // Engagement
 export * from "./engagement/entrepreneurship.tsx";
 export * from "./engagement/human-practices.tsx";
