@@ -39,6 +39,8 @@ h2 {
 .navbar-custom .dropdown-toggle,
 .navbar-custom .dropdown-item {
   font-family: "Be Vietnam Pro", sans-serif !important;
+  font-size: 1.1rem;
+  color:#82501f;
   transition: color 0.2s ease;
 }
 
@@ -186,56 +188,20 @@ h2 {
 
 .footer-custom {
   background-color: #de5d3c !important;
+  font-size: 1rem;
 }
 
 .footer-custom,
 .footer-custom * {
   font-family: "Kalam", cursive;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-}
-
-/* CALLOUT */
-.bd-callout {
-  padding: 1.25rem;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  border: 1px solid #e9ecef;
-  border-left-width: 0.25rem;
-  border-radius: 0.25rem;
-}
-
-.bd-callout h4 {
-  margin-bottom: 0.25rem;
-}
-
-.bd-callout p:last-child {
-  margin-bottom: 0;
-}
-
-.bd-callout code {
-  border-radius: 0.25rem;
-}
-
-.bd-callout + .bd-callout {
-  margin-top: -0.25rem;
-}
-
-.bd-callout-info {
-  border-left-color: #5bc0de;
-}
-
-.bd-callout-warning {
-  border-left-color: #f0ad4e;
-}
-
-.bd-callout-danger {
-  border-left-color: #d9534f;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.35);
 }
 
 /* footer */
 footer a {
   color: #ffffff;
   font-weight: bold;
+  font-size: 1rem;
   text-decoration: none;
 }
 
