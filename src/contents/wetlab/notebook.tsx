@@ -11,7 +11,6 @@ export function Notebook() {
       <div className="row mt-4">
         <div className="col-lg-8">
           <h2>What Should this Page Contain?</h2>
-          <hr />
           <ul>
             <li>
               Record all activities in chronological order, with each entry
