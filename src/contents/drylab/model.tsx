@@ -16,7 +16,7 @@ export function Model() {
         <h2>Links</h2>
         <div className="mb-2">
           Download{" "}
-          <a href={codeSrc} download aria-label="Download modelingcode.zip">imodelingcode.zip 🔗</a>
+          <a href={codeSrc} download aria-label="Download modelingcode.zip">modelingcode.zip 🔗</a>
         </div>
       </div>
     </div>
