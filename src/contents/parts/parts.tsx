@@ -14,12 +14,12 @@ export function Parts() {
       <div className="mt-3">
         <div className="mb-2">
           <h2>Links</h2>
-          Download{" "}
-          <a href={mainChainDnaSrc} download aria-label="Download Plasmid for main chain.dna">Plasmid for main chain.dna 🔗</a>
         </div>
         <div>
-          Download{" "}
-          <a href={visualizationSuicideDnaSrc} download aria-label="Download Plasmid for Visualization and Suicide(1.0).dna">Plasmid for Visualization and Suicide(1.0).dna 🔗</a>
+          Download{" "}<a href={mainChainDnaSrc} download aria-label="Download Plasmid for main chain.dna">Plasmid for main chain.dna 🔗</a>
+        </div>
+        <div>
+          Download{" "}<a href={visualizationSuicideDnaSrc} download aria-label="Download Plasmid for Visualization and Suicide(1.0).dna">Plasmid for Visualization and Suicide(1.0).dna 🔗</a>
         </div>
       </div>
     </div>
