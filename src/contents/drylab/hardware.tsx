@@ -2,7 +2,7 @@ export function Hardware() {
   const pdfSrc = `${import.meta.env.BASE_URL}pdfs/Hardware.pdf`;
   const cppSrc = `${import.meta.env.BASE_URL}pdfs/${encodeURIComponent("iGEM1-Hardware.cpp")}`;
   const pySrc = `${import.meta.env.BASE_URL}pdfs/${encodeURIComponent("iGEM1-Hardware.py")}`;
-  const videoSrc = `${import.meta.env.BASE_URL}video/${encodeURIComponent("SOLIDWORKS Premium 2025 SP5.0 - [总装.SLDASM _] 2026-02-22 18-07-08.mp4")}`;
+  const videoSrc = `${import.meta.env.BASE_URL}video/${encodeURIComponent("爆炸图.mp4")}`;
 
   return (
     <div className="row mt-4">

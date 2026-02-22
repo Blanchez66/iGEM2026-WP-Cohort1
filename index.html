@@ -2,6 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var redirectedPath = params.get("p");
+        if (!redirectedPath) return;
+
+        params.delete("p");
+        var search = params.toString();
+        var basePath = window.location.pathname.replace(/\/$/, "");
+        var nextUrl = basePath + redirectedPath + (search ? "?" + search : "") + window.location.hash;
+        window.history.replaceState(null, "", nextUrl);
+      })();
+    </script>
     <link rel="icon" href="%BASE_URL%images/home/crab.svg" type="image/svg+xml" />
     <link rel="shortcut icon" href="%BASE_URL%images/home/crab.svg" type="image/svg+xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
