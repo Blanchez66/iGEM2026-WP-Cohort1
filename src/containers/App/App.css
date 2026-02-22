@@ -6,6 +6,34 @@ body {
   overflow-x: hidden;
 }
 
+html,
+body {
+  scrollbar-color: #de5d3c #fcece8;
+  scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: #fcece8;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: #de5d3c;
+  border: 2px solid #fcece8;
+  border-radius: 999px;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: #c84d2e;
+}
+
 h2 {
   font-size: clamp(2rem, 5vw, 2rem);
   font-family: "Playpen Sans Deva", sans-serif;
@@ -157,9 +185,21 @@ h2 {
 
 }
 
+#page-content p,
+#page-content li {
+  font-size: 1.08rem;   /* 改这里 */
+  line-height: 1.75;
+}
+
 #page-content h2,
 #page-content h3 {
   scroll-margin-top: 84px;
+}
+
+#page-content h3 {
+  color: #82501f;
+  font-weight: 700;
+  text-shadow: 0 1px 0 rgba(130, 80, 31, 0.35);
 }
 
 .toc-sidebar {
@@ -217,8 +257,14 @@ h2 {
   color: #e44510;
 }
 
+.toc-link.is-active {
+  color: #e44510;
+  font-weight: 600;
+}
+
 .toc-link:hover::before,
-.toc-link:focus::before {
+.toc-link:focus::before,
+.toc-link.is-active::before {
   transform: translateY(-50%) scaleY(1);
 }
 
