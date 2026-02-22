@@ -46,6 +46,72 @@ const App = () => {
     upsertFavicon("shortcut icon");
   }, [pageName, faviconHref]);
 
+  useEffect(() => {
+    if (currentPath === "/") return;
+
+    const root = document.querySelector<HTMLElement>("#page-content");
+    if (!root) return;
+
+    const cleanupHandlers: Array<() => void> = [];
+
+    const setupCollapsibleH2 = () => {
+      const h2Elements = Array.from(root.querySelectorAll<HTMLHeadingElement>("h2"));
+
+      h2Elements.forEach((heading) => {
+        if (heading.dataset.collapsibleReady === "true") return;
+        const parent = heading.parentElement;
+        if (!parent) return;
+
+        let nextSibling = heading.nextElementSibling;
+        if (!nextSibling || nextSibling.tagName === "H2") return;
+
+        const sectionBody = document.createElement("div");
+        sectionBody.className = "h2-section-body";
+        sectionBody.dataset.collapsibleBody = "true";
+
+        while (nextSibling && nextSibling.tagName !== "H2") {
+          const current = nextSibling;
+          nextSibling = nextSibling.nextElementSibling;
+          sectionBody.appendChild(current);
+        }
+
+        heading.insertAdjacentElement("afterend", sectionBody);
+        heading.classList.add("h2-collapsible");
+        heading.dataset.collapsibleReady = "true";
+        heading.tabIndex = 0;
+        heading.setAttribute("role", "button");
+        heading.setAttribute("aria-expanded", "true");
+
+        const toggleSection = () => {
+          const isCollapsed = heading.classList.toggle("is-collapsed");
+          sectionBody.classList.toggle("is-collapsed", isCollapsed);
+          heading.setAttribute("aria-expanded", isCollapsed ? "false" : "true");
+        };
+
+        const onKeyDown = (event: KeyboardEvent) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleSection();
+          }
+        };
+
+        heading.addEventListener("click", toggleSection);
+        heading.addEventListener("keydown", onKeyDown);
+        cleanupHandlers.push(() => {
+          heading.removeEventListener("click", toggleSection);
+          heading.removeEventListener("keydown", onKeyDown);
+        });
+      });
+    };
+
+    const id = requestAnimationFrame(setupCollapsibleH2);
+
+    return () => {
+      cancelAnimationFrame(id);
+      cleanupHandlers.forEach((cleanup) => cleanup());
+    };
+  }, [currentPath]);
+
   return (
     <>
       {/* Navigation */}
@@ -62,7 +128,7 @@ const App = () => {
                 path === "/" ? (
                   <Component />
                 ) : (
-                  <>
+                  <div>
                     <Header title={title || ""} />
                     <div className="container page-layout-container">
                       <div className="row">
@@ -74,7 +140,7 @@ const App = () => {
                         </main>
                       </div>
                     </div>
-                  </>
+                  </div>
                 )
               }
             />

@@ -296,7 +296,7 @@ export function Design() {
           </ul>
           <h4>3. The Delivery: Dual-Chamber &quot;Mix-at-Bedside&quot; System <Ref ids={[24]} /> </h4>
           <p>
-            <Ref ids={[20]} /> Stability is the bottleneck of live biotherapeutics. To decouple
+            Stability is the bottleneck of live biotherapeutics. To decouple
             storage stability from clinical usability, we adopted a Dual-Chamber Prefilled Syringe
             system.
           </p>

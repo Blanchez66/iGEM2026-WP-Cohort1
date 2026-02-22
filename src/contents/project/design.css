@@ -8,6 +8,7 @@
   margin: 1rem auto;
   max-width: var(--img-max-width);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
 }
 
 .page .img-wrap img {
@@ -70,7 +71,7 @@
   vertical-align: super;
   line-height: 0;
   text-decoration: none;
-  color: #de5d3c;
+  color: #86290c;
   margin-left: 0.05em;
 }
 
@@ -88,13 +89,14 @@
   counter-increment: ref-counter;
   margin-bottom: 0.75rem;
   position: relative;
-  padding-left: 2.1rem;
+  padding-left: 2.9rem;
 }
 
 .page #reference-list li::before {
   content: "[" counter(ref-counter) "]";
   position: absolute;
   left: 0;
+  width: 2.4rem;
   color: #5f5f5f;
 }
 

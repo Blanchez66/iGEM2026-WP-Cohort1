@@ -191,6 +191,16 @@ h2 {
   line-height: 1.75;
 }
 
+#page-content a,
+#page-content a:visited {
+  color: #86290c;
+}
+
+#page-content a:hover,
+#page-content a:focus {
+  color: #6f2109;
+}
+
 #page-content h2,
 #page-content h3 {
   scroll-margin-top: 84px;
@@ -202,6 +212,41 @@ h2 {
   text-shadow: 0 1px 0 rgba(130, 80, 31, 0.35);
 }
 
+#page-content h2.h2-collapsible {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding-right: 1.6rem;
+}
+
+#page-content h2.h2-collapsible::after {
+  content: "−";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-52%);
+  color: #86290c;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+#page-content h2.h2-collapsible.is-collapsed::after {
+  content: "+";
+}
+
+#page-content .h2-section-body {
+  max-height: 9999px;
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 0.28s ease, opacity 0.2s ease;
+}
+
+#page-content .h2-section-body.is-collapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
 .toc-sidebar {
   position: sticky;
   top: 84px;
@@ -211,6 +256,7 @@ h2 {
 .toc-title {
   margin: 0 0 0.7rem;
   font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -231,11 +277,16 @@ h2 {
 .toc-link {
   position: relative;
   display: inline-block;
-  padding-left: 0.7rem;
-  color: #4f4f4f;
+  padding: 0.18rem 0.5rem 0.18rem 0.7rem;
+  border-radius: 0.35rem;
+  overflow: hidden;
+  color: #121212;
   font-family: "Be Vietnam Pro", sans-serif;
-  font-size: 0.92rem;
+  font-size: 1.2rem;
   text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  z-index: 0;
 }
 
 .toc-link::before {
@@ -252,9 +303,15 @@ h2 {
   transition: transform 0.2s ease;
 }
 
-.toc-link:hover,
-.toc-link:focus {
-  color: #e44510;
+.toc-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #fcece8 0%, rgba(252, 236, 232, 0.2) 100%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.24s ease;
+  z-index: -1;
 }
 
 .toc-link.is-active {
@@ -266,6 +323,11 @@ h2 {
 .toc-link:focus::before,
 .toc-link.is-active::before {
   transform: translateY(-50%) scaleY(1);
+}
+
+.toc-link:hover::after,
+.toc-link:focus::after {
+  transform: scaleX(1);
 }
 
 .bg-hero {
@@ -284,6 +346,7 @@ h2 {
 .footer-custom {
   background-color: #de5d3c !important;
   font-size: 1rem;
+  margin-top: 0 !important;
 }
 
 .footer-custom,
