@@ -13,6 +13,7 @@ export function Parts() {
       />
       <div className="mt-3">
         <div className="mb-2">
+          <h2>Links</h2>
           Download{" "}
           <a href={mainChainDnaSrc} download aria-label="Download Plasmid for main chain.dna">Plasmid for main chain.dna 🔗</a>
         </div>
