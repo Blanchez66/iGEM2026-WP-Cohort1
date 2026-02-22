@@ -4,53 +4,10 @@ export function Contribution() {
       <div className="row mt-4">
         <div className="col">
           <div className="bd-callout bd-callout-info">
-            <h4>Bronze Medal Criterion #3</h4>
             <p>
-              Make a useful contribution for future iGEM teams and document it
-              on this page.
-            </p>
-            <hr />
-            <p>
-              Visit the{" "}
-              <a href="https://competition.igem.org/judging/medals">
-                Medals page
-              </a>{" "}
-              for more information.
+              Our team developed a modular, multi-scenario precision system against CRAB infections, achieving full-process coverage of detection, treatment, monitoring and biosafety control based on its quorum-sensing and biofilm traits. Key innovations include a rapid colonization/infection detection kit, site/stage-specific administration regimens, non-invasive colorimetric visualization, a multi-layered kill-switch system, and an open-source modular toolkit. This system is optimized for cost and usability, targeting vulnerable groups (the elderly, war-zone populations) to support CRAB control under low-sterility conditions, contributing a synthetic biology solution to global AMR and CRAB transmission interruption. We also share all our research resources and the open-source toolkit with the iGEM community to facilitate collaborative exploration and further development of anti-multidrug-resistant bacterial strategies among fellow teams.
             </p>
           </div>
-        </div>
-      </div>
-
-      <div className="row mt-4">
-        <div className="col">
-          <h2>What Should this Page Contain?</h2>
-          <hr />
-          <p>
-            Teams must document their contribution and explain why their effort
-            is a contribution to fellow iGEMers. There is no single definition
-            of what a contribution should be. We invite teams to be creative and
-            generous in the knowledge, data or tools they may provide to the
-            community.
-          </p>
-          <p>A few examples of contributions are:</p>
-          <ul>
-            <li>
-              Creating a new BioBrick part or significantly improving an
-              existing one in the iGEM Registry.
-            </li>
-            <li>
-              Developing software, tools, or resources that can considerably
-              assist future iGEM teams.
-            </li>
-            <li>
-              Sharing optimized protocols, experimental techniques, or
-              methodologies.
-            </li>
-            <li>
-              Any other contributions that provide a clear benefit to future
-              iGEM teams.
-            </li>
-          </ul>
         </div>
       </div>
     </>
